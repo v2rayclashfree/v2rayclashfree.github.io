@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-27173.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>vue中使用$http.post请求传参的错误及解决_vue.js</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="目录  使用$http.post请求传参的错误 vue post请求之坑  解决方法     使用$http.post请求传参的错误 在使用$http请求后台，照常我们在后端 使用注解@PostMap" />
+    
+    <!-- Favicon -->
+    <link href="__ADDON__/img/v2rayclashfree/favicon.ico" rel="icon">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+                        <a href="/" class="logo">V2ray Clash Free</a>
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>vue中使用$http.post请求传参的错误及解决_vue.js</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">使用$http.post请求传参的错误</a></li> <li><a href="#_label1" rel="nofollow">vue post请求之坑</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_0" rel="nofollow">解决方法</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>使用$http.post请求传参的错误</h2> <p>在使用$http请求后台，照常我们在后端 使用注解@PostMapper或者 @RequestMapping(value = “XXXX”,method = RequestMethod.POST)接受请求</p> <div class="ay1code"> <pre class="brush:js;">	 handleAdd(node) {  		this.$http.post("/item/category/addCategory",{  				node:node  				})  				.then(({data})=&gt;{  						this.$emit("close");  						this.$message.success("添加成功！");  				}).catch(() =&gt; {  				     this.$message.error("添加失败！");  				    });  				    }  </pre> </div> <p>结果报了一个’GET’的错误,我就很纳闷。并没有写get方法，那必定会出错。</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220424/044d0a23a8c19ede2f3e936bd7e7634f.jpg"></p> <p><strong>截图奉上==</strong></p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220424/46fef17e7d26d979477e19a382928f46.jpg"></p> <p>传递的是json对象而不是数组。</p> <p>还好之前有过post传递参数的项目之后又搜了一下，</p> <p>如下面这种</p> <div class="ay1code"> <pre class="brush:js;"> handleAdd(node) {  		this.$http({  					method:'post',  					url:'/item/category/addCategory',  					data: node  				}).then(({data})=&gt;{  						this.$emit("close");  						this.$message.success("添加成功！");  				}).catch(() =&gt; {               this.$message.error("添加失败！");              });              }  </pre> </div> <p>整体上没有问题</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220424/848fa848a7ec8b96364ae38ba410cd86.jpg"></p> <p>之后我有尝试了一下</p> <div class="ay1code"> <pre class="brush:js;"> handleAdd(node) {  	this.$http.post("/item/category/addCategory",{  				node:this.$qs.stringify(node)  				})  				.then(({data})=&gt;{  						this.$emit("close");  						this.$message.success("添加成功！");  				}).catch(() =&gt; {  				     this.$message.error("添加失败！");  				    });  	}  </pre> </div> <p>传递的结果</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220424/537548835f05aed443f140010f848634.jpg"></p> <p>三种方式都可以使用，但我只有第二种方式成功啦。</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>vue post请求之坑</h2> <p>最近用的vue请求数据，坑死，还是对前端vue框架不熟。</p> <p>与后端通信有问题，要么是json加入到url有问题、要么是json解析有问题。</p> <p class="maodian"><a name="_lab2_1_0" rel="nofollow"></a></p> <h3>解决方法</h3> <p>1、请求参数一个用url传</p> <div class="ay1code"> <pre class="brush:js;"> var json=[{"msg”：“123"}];   var temp=encodeURI(JSON.stringify(json));      //重点   var urls="http://202.114.207.232:8080/web/data?operations="+temp;              this.$axios({type:'post',url:urls, dataType:'json' }).then( res =&gt; { console.log(res) }).catch( e =&gt; { console.info(e) })</pre> </div> <p>2、一个用data包装传</p> <div class="ay1code"> <pre class="brush:js;">var Data=[{}]  var url = "http://111.111.111.111:8080/web/data";  var params = new URLSearchParams();  params.append("operations", JSON.stringify(Data));           //重点  // params.append('param2', 'value2');  that.$axios.post(url, params)      .then(response =&gt; {          // post 成功，response.data 为返回的数据          console.log(response.data)      })      .catch(error =&gt; {          // 请求失败          console.log(error)      })</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-26711.htm">附近哪里可以领养狗狗 附近哪里可以领养狗狗狗</a></p>
+                                        <p>下一个：<a href="/news/article-27175.htm">适合养猫的生肖（适合养猫的生肖有哪些）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-9-free-v2ray-subscribe.htm" title="「9月9日」最高速度19.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「9月9日」最高速度19.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-13-clash-windows.htm" title="「8月13日」最高速度22.2M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「8月13日」最高速度22.2M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26710.htm" title="自己拿疫苗去宠物医院打多少钱啊（自己带疫苗去宠物医院）">自己拿疫苗去宠物医院打多少钱啊（自己带疫苗去宠物医院）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-4-node-share.htm" title="「8月4日」最高速度20.9M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「8月4日」最高速度20.9M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20703.htm" title="宠物领养网免费平台有哪些软件好用点（宠物领养网站）">宠物领养网免费平台有哪些软件好用点（宠物领养网站）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-3-free-ssr-subscribe.htm" title="「10月3日」最高速度21.9M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「10月3日」最高速度21.9M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-7-free-clash-subscribe.htm" title="「8月7日」最高速度19.5M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「8月7日」最高速度19.5M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26246.htm" title="动物疫苗有哪些种类及作用图片（动物疫苗有哪几种）">动物疫苗有哪些种类及作用图片（动物疫苗有哪几种）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-14-free-clash-subscribe.htm" title="「9月14日」最高速度20.6M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「9月14日」最高速度20.6M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-v2ray-subscribe.htm" title="「11月5日」最高速度20.6M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「11月5日」最高速度20.6M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
