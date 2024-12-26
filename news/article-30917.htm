@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-30917.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>C#把EXCEL数据转换成DataTable_C#教程_</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="C#实现EXCEL表格转DataTable C#代码实现把Excel文件转化为DataTable，根据Excel的文件后缀名不同，用不同的方法来进行实现，下面通过根据Excel文件的两种后缀名（*.x" />
+    
+    <!-- Favicon -->
+    <link href="__ADDON__/img/v2rayclashfree/favicon.ico" rel="icon">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+                        <a href="/" class="logo">V2ray Clash Free</a>
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>C#把EXCEL数据转换成DataTable_C#教程_</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h3><strong>C#实现EXCEL表格转DataTable</strong></h3> <p>C#代码实现把Excel文件转化为DataTable，根据Excel的文件后缀名不同，用不同的方法来进行实现，下面通过根据Excel文件的两种后缀名（*.xlsx和*.xls）分别来实现。获取文件后缀名的方法是：Path.GetExtension(fileName)方法，通过引用：using System.IO;实现代码如下：（其中以下代码中出现的filename都是带盘符的绝对路径）</p> <p>根据Excel文件的后缀名不同调用的主方法</p> <div class="ay1code"> <pre class="brush:csharp;">private DataTable FileToDataTable(string fileName)      {          DataTable dt = new DataTable();          string extendName = Path.GetExtension(fileName);//获取文件的后缀名          switch (extendName.ToLower())          {              case ".xls":                  dt = XlsToDataTable(fileName);                  break;              case ".xlsx":                  dt = XlsxToDataTable(fileName);                  break;              default:                  break;          }          return dt;      }</pre> </div> <p>XlsToDataTable()</p> <div class="ay1code"> <pre class="brush:csharp;">private DataTable XlsToDataTable(string fileName)      {          DataTable dataTable = new DataTable();          Stream stream = null;          try          {              stream = File.OpenRead(fileName);              HSSFWorkbook hssfworkbook = new HSSFWorkbook(stream);              HSSFSheet hssfsheet = (HSSFSheet)hssfworkbook.GetSheetAt(hssfworkbook.ActiveSheetIndex);              HSSFRow hssfrow = (HSSFRow)hssfsheet.GetRow(0);              int lastCellNum = (int)hssfrow.LastCellNum;              for (int i = (int)hssfrow.FirstCellNum; i &lt; lastCellNum; i++)              {                  DataColumn column = new DataColumn(hssfrow.GetCell(i).StringCellValue);                  dataTable.Columns.Add(column);              }              dataTable.TableName = hssfsheet.SheetName;              int lastRowNum = hssfsheet.LastRowNum;              //列名后,从TABLE第二行开始进行填充数据              for (int i = hssfsheet.FirstRowNum + 1; i &lt; hssfsheet.LastRowNum; i++)//              {                  HSSFRow hssfrow2 = (HSSFRow)hssfsheet.GetRow(i);                  DataRow dataRow = dataTable.NewRow();                  for (int j = (int)hssfrow2.FirstCellNum; j &lt; lastCellNum; j++)//                  {                      dataRow[j] = hssfrow2.GetCell(j);//                  }                  dataTable.Rows.Add(dataRow);              }              stream.Close();          }          catch (Exception ex)          {              ScriptManager.RegisterStartupScript(Page, GetType(), "alertForm", "alert(' Xls to DataTable: " + ex.Message + "');", true);          }          finally          {              if (stream != null)              {                  stream.Close();              }          }          return dataTable;      }</pre> </div> <p>XlsxToDataTable()</p> <div class="ay1code"> <pre class="brush:csharp;">public DataTable XlsxToDataTable(string vFilePath)      {          DataTable dataTable = new DataTable();          try          {              SLDocument sldocument = new SLDocument(vFilePath);              dataTable.TableName = sldocument.GetSheetNames()[0];              SLWorksheetStatistics worksheetStatistics = sldocument.GetWorksheetStatistics();              int startColumnIndex = worksheetStatistics.StartColumnIndex;              int endColumnIndex = worksheetStatistics.EndColumnIndex;              int startRowIndex = worksheetStatistics.StartRowIndex;              int endRowIndex = worksheetStatistics.EndRowIndex;              for (int i = startColumnIndex; i &lt;= endColumnIndex; i++)              {                  SLRstType cellValueAsRstType = sldocument.GetCellValueAsRstType(1, i);                  dataTable.Columns.Add(new DataColumn(cellValueAsRstType.GetText(), typeof(string)));              }              for (int j = startRowIndex + 1; j &lt;= endRowIndex; j++)              {                  DataRow dataRow = dataTable.NewRow();                  for (int i = startColumnIndex; i &lt;= endColumnIndex; i++)                  {                      dataRow[i - 1] = sldocument.GetCellValueAsString(j, i);                  }                  dataTable.Rows.Add(dataRow);              }          }          catch (Exception ex)          {              throw new Exception("Xlsx to DataTable: \n" + ex.Message);          }          return dataTable;      }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30450.htm">动物防疫站在哪个位置好 动物防疫站在哪个位置好点</a></p>
+                                        <p>下一个：<a href="/news/article-30918.htm">自己家养的猫抓出血（自己家养的猫抓出血需要***吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-7-free-clash.htm" title="「9月7日」最高速度22M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「9月7日」最高速度22M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-1-node-share.htm" title="「10月1日」最高速度23M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「10月1日」最高速度23M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-node-share-links.htm" title="「10月16日」最高速度21M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「10月16日」最高速度21M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-high-speed-nodes.htm" title="「11月2日」最高速度19.5M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「11月2日」最高速度19.5M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-free-node-subscribe-links.htm" title="「11月15日」最高速度22.4M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「11月15日」最高速度22.4M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-clash-node.htm" title="「11月17日」最高速度20.3M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「11月17日」最高速度20.3M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-30-free-high-speed-nodes.htm" title="「9月30日」最高速度18.6M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「9月30日」最高速度18.6M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-node-share-links.htm" title="「11月30日」最高速度21.4M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「11月30日」最高速度21.4M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31296.htm" title="动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）">动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-5-free-node-subscribe.htm" title="「7月5日」最高速度19.7M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「7月5日」最高速度19.7M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
