@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-34261.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>C++中动态库和静态库的使用</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="库文件是计算机上的一类文件，可以简单的把库文件看成一种代码仓库，它提供给使用者一些可以直接拿来用的变量、函数或类。 ◼ 库是特殊的一种程序，编写库的程序和编写一般的程序区别不大，只是库不能单独运行。 " />
+    
+    <!-- Favicon -->
+    <link href="__ADDON__/img/v2rayclashfree/favicon.ico" rel="icon">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+                        <a href="/" class="logo">V2ray Clash Free</a>
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>C++中动态库和静态库的使用</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <blockquote> <p>库文件是计算机上的一类文件，可以简单的把库文件看成一种代码仓库，它提供给使用者一些可以直接拿来用的变量、函数或类。</p> <p>◼ 库是特殊的一种程序，编写库的程序和编写一般的程序区别不大，只是库不能单独运行。 ◼ 库文件有两种，静态库和动态库（共享库），区别是：静态库在程序的链接阶段被复制 到了程序中；动态库在链接阶段没有被复制到程序中，而是程序在运行时由系统动态加 载到内存中供程序调用。</p> <p>◼ 库的好处：1.代码保密 2.方便部署和分发</p> </blockquote> </h1> <p>静态库、动态库区别来自链接阶段如何处理，链接成可执行程序。分别称为静态链接方式和动态链接方式。</p> <p>静态库会在程序链接时被打包到可执行文件中，如果修改了静态库，整个可执行文件都需要重新编译。</p> <h2>2.1静态库制作方法</h2> <p><img fetchpriority="high" decoding="async" alt="" height="372" src="http://img.555519.xyz/uploads/20230217/28717a7851479372db87ee48f8c14ab0.jpg"></p> <h2>2.2静态库制作过程</h2> <p><img decoding="async" alt="" height="496" src="http://img.555519.xyz/uploads/20230217/c54d62d9707d094375f86d5c3e279706.jpg"></p> <h2>2.3静态库优缺点</h2> <p><img decoding="async" alt="" height="573" src="http://img.555519.xyz/uploads/20230217/d59cb30b2abb8058cc34f141bedf6a4b.jpg"></p> </h1> <h2>2.1动态库制作方法</h2> <p><img loading="lazy" decoding="async" alt="" height="381" src="http://img.555519.xyz/uploads/20230217/24a540f809a22fae787aaf5aee07d343.jpg"></p> <p>&nbsp;<img loading="lazy" decoding="async" alt="" height="499" src="http://img.555519.xyz/uploads/20230217/d204bbcb3725c157c3274e5f42c33a85.jpg"></p> <p>&nbsp;</p> <h2>&nbsp;3.2动态库加载方式</h2> <p><img loading="lazy" decoding="async" alt="" height="547" src="http://img.555519.xyz/uploads/20230217/87f8e563f78b0ab02752743c41afdb8a.jpg"></p> <blockquote> <p>&nbsp;所以在定义动态库之后，需要将其绝对位置加载到系统的环境变量LD_LIBRARY_PATH中或将其移动到系统默认文件夹/lib/,/usr/lib/，或者将其路径添加至/etc/ld.so.cache文件列表。DT_RPATH不可修改，所以不用管。</p> </blockquote> <h2>3.3添加环境变量的方法</h2> <blockquote> <h2>采用如下命令可以临时添加，终端关闭后会失效</h2> <pre><code class="language-bash">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:动态库绝对路径</code></pre> <p>非root用户添加，修改~/.bashrc文件，在文件最下方添加上述命令，并通过 source ~/.bashrc更新文件。</p> <p>root用户为所有用户添加，即全部用户都能使用，修改/etc/profile文件，将上述命令添加至文件最下方，并source /etc/profile更新文件</p> </blockquote> <h2>3.4动态库的优缺点</h2> <h2>&nbsp;<img loading="lazy" decoding="async" alt="" height="569" src="http://img.555519.xyz/uploads/20230217/3d8fb373ea52bae6fd20b48a6b708465.jpg"><br /> </h2> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-33779.htm">宠物粮食加工厂需要执照吗多少钱 宠物粮食加工厂需要执照吗多少钱一个月</a></p>
+                                        <p>下一个：<a href="/news/article-34264.htm">宠物医院好评怎么写评语（宠物医院好评怎么写评语呢）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-30450.htm" title="动物防疫站在哪个位置好 动物防疫站在哪个位置好点">动物防疫站在哪个位置好 动物防疫站在哪个位置好点</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-25-free-shadowrocket-node.htm" title="「10月25日」最高速度19.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「10月25日」最高速度19.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-25-clash-node-daily-updates.htm" title="「9月25日」最高速度21.1M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「9月25日」最高速度21.1M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-4-node-share.htm" title="「8月4日」最高速度20.9M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「8月4日」最高速度20.9M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-13-free-shadowrocket-node.htm" title="「7月13日」最高速度21M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「7月13日」最高速度21M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-clash-windows.htm" title="「12月25日」最高速度22.9M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接">「12月25日」最高速度22.9M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-29477.htm" title="动物医院的仪器设备是什么意思（动物医院的仪器设备是什么意思啊）">动物医院的仪器设备是什么意思（动物医院的仪器设备是什么意思啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-8-clash-node-daily-updates.htm" title="「9月8日」最高速度18.8M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「9月8日」最高速度18.8M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-25-free-high-speed-nodes.htm" title="「6月25日」最高速度18.9M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「6月25日」最高速度18.9M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30917.htm" title="C#把EXCEL数据转换成DataTable_C#教程_">C#把EXCEL数据转换成DataTable_C#教程_</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
