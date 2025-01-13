@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-39601.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>centos 7 mini版 rpm 安装mysql5.7过程</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="1.mysql 下载    http://dev.mysql.com/downloads/mysql/      二、mysql安装    2.1解压mysql-5.7.16-1.el7.x86_64" />
+    
+    <!-- Favicon -->
+    <link href="__ADDON__/img/v2rayclashfree/favicon.ico" rel="icon">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+                        <a href="/" class="logo">V2ray Clash Free</a>
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>centos 7 mini版 rpm 安装mysql5.7过程</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div>  1.mysql 下载</div> <div></div> <div>  http://dev.mysql.com/downloads/mysql/</div> <div><img decoding="async" src="http://img.555519.xyz/uploads3/20220605/fff5851c580571bc2946eb5f29982f1f.jpg" alt="centos 7 mini版 rpm 安装mysql5.7过程"></div> <div><img alt=""/></div> <div></div> <div>  二、mysql安装</div> <div></div> <div>  2.1解压mysql-5.7.16-1.el7.x86_64.rpm-bundle.tar 文件</div> <div>  shell&gt; tar -xvf mysql-5.7.16-1.el7.x86_64.rpm-bundle.tar</div> <div></div> <div>  删除server的minimal版本</div> <div>  shell&gt; rm -rf&nbsp;mysql-community-server-minimal-5.7.16-1.el7.x86_64.rpm</div> <div></div> <div>  2.2安装命令</div> <div>  &nbsp;shell&gt; rpm -ivh mysql-community-{server,client,common,libs}-* --nosignature</div> <div><img decoding="async" src="http://img.555519.xyz/uploads3/20220605/a77e698e6f2aa90f22447e4c99b2c037.jpg" alt="centos 7 mini版 rpm 安装mysql5.7过程"></div> <div><img alt=""/></div> <div>  通过错误日志发现，需要安装Perl模块，以及卸载mariadb</div> <div></div> <div>  2.3用CPAN安装Perl模块</div> <div>  shell&gt; yum install -y perl-CPAN</div> <div></div> <div>  出现问题</div> <div><img decoding="async" src="http://img.555519.xyz/uploads3/20220605/c2f731064b54990bf60c0d8f87344c21.jpg" alt="centos 7 mini版 rpm 安装mysql5.7过程"></div> <div><img alt=""/></div> <div></div> <div>  2.3.1安装gcc</div> <div>  shell&gt; yum -y install gcc</div> <div></div> <div>  2.3.2perl模块安装</div> <div></div> <div>  shell&gt;&nbsp;perl&nbsp;-MCPAN&nbsp;-e&nbsp;shell</div> <div>  cpan&gt;&nbsp;install&nbsp;DBI</div> <div></div> <div>  2.4卸载&nbsp;mariadb</div> <div>  rpm -qa | grep mariadb</div> <div>  rpm -e mariadb-libs-5.5.44-2.el7.centos.x86_64 --nodeps</div> <div></div> <div>  2.5再次进行安装</div> <div>  &nbsp;shell&gt; rpm -ivh mysql-community-{server,client,common,libs}-* --nosignature</div> <div></div> <div>  三、启动mysql并配置</div> <div></div> <div>  3.1启动mysql</div> <div>  shell&gt;&nbsp;sudo&nbsp;service&nbsp;mysqld&nbsp;start</div> <div></div> <div>  3.2查看是否启动成功</div> <div>  shell&gt; netstat -ntlp</div> <div>  如果有对3306端口的监听则是正常启动</div> <div></div> <div>  3.3查找密码</div> <div>  shell&gt;&nbsp;sudo&nbsp;grep&nbsp;'temporary&nbsp;password'&nbsp;/var/log/mysqld.log</div> <div></div> <div>  返回用户密码日志</div> <div>  2016-12-08T19:16:58.870061Z 1 [Note] A temporary password is generated for root@localhost: a&lt;tyNh6)ZBrM</div> <div></div> <div>  3.4进入mysql</div> <div>  shell&gt;&nbsp;mysql&nbsp;-uroot&nbsp;-p</div> <div>  密码使用显示的密码</div> <div></div> <div>  3.5修改秘密</div> <div>  mysql&gt; ALTER USER 'root'@'localhost' IDENTIFIED BY 'Hadoop@2016';</div> <div>  说明：设置的密码必须是包含至少一个大写字母，一个小写字母，一个数字和一个特殊字符，长度至少8个字节。</div> <div></div> <div>  四、参考文档：</div> <div></div> <div>  4.1mysql 5.7 官方说明文档</div> <div>  http://dev.mysql.com/doc/refman/5.7/en/linux-installation-rpm.html</div> <div></div> <div>  4.2perl模块安装说明地址1</div> <div>  http://learn.perl.org/modules/</div> <div></div> <div>  4.3perl模块安装说明地址2</div> <div>  http://dev.mysql.com/doc/refman/5.7/en/perl-installation.html</div> <div></div> <div>  4.4CentOS7安装MySQL冲突和问题解决小结</div> <div>  http://blog.csdn.net/typa01_kk/article/details/49059729</div> <div></div> <p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-39124.htm">女孩十大最好专业初中学历（女生最吃香的十大专业初中学历）</a></p>
+                                        <p>下一个：<a href="/news/article-39603.htm">南京领养狗狗多少钱（南京市宠物领养）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-29771.htm" title="React系列五——event事件">React系列五——event事件</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-shadowrocket-node.htm" title="「11月27日」最高速度18.1M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「11月27日」最高速度18.1M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-20-shadowrocket-node.htm" title="「12月20日」最高速度20.6M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费手机节点订阅链接">「12月20日」最高速度20.6M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28567.htm" title="宠物粮食店铺图片大全 宠物粮食店铺图片大全大图">宠物粮食店铺图片大全 宠物粮食店铺图片大全大图</a></li>
+                        <li class="py-2"><a href="/news/article-34958.htm" title="长春宠物同城领养价格（长春市宠物猫领养）">长春宠物同城领养价格（长春市宠物猫领养）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-shadowrocket-node.htm" title="「11月16日」最高速度22.9M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「11月16日」最高速度22.9M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28569.htm" title="宠物粮利润 宠物粮利润率">宠物粮利润 宠物粮利润率</a></li>
+                        <li class="py-2"><a href="/news/article-38106.htm" title="动物疫苗新法案（动物疫苗行业标准）">动物疫苗新法案（动物疫苗行业标准）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-shadowrocket-node.htm" title="「12月9日」最高速度21.5M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「12月9日」最高速度21.5M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-node-share.htm" title="「1月10日」最高速度21.8M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费手机节点订阅链接">「1月10日」最高速度21.8M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

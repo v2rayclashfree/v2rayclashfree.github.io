@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-39123.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@DateTimeFormat 注解 和 @JsonFormat 注解</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="一、背景 &nbsp;平常在web开发过程中，在前后台日期数据的交互过程中，经常会遇到一些问题。实体类里面使用的是java.util.Date类型保存日期数据。而前台向后台传递数据的时候用的是字符串。" />
+    
+    <!-- Favicon -->
+    <link href="__ADDON__/img/v2rayclashfree/favicon.ico" rel="icon">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+                        <a href="/" class="logo">V2ray Clash Free</a>
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>@DateTimeFormat 注解 和 @JsonFormat 注解</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>一、背景</p> <p>&nbsp;平常在web开发过程中，在前后台日期数据的交互过程中，经常会遇到一些问题。实体类里面使用的是java.util.Date类型保存日期数据。而前台向后台传递数据的时候用的是字符串。这样会出现格式转换问题。而在后台向前台传递数据的过程中。日期格式将会被转换为长整型。这显然不是我们想要的结果。为了解决此类问题。就用到了<strong>@DateTimeFormat</strong>注解&nbsp; 和<strong>@JsonFormat</strong>&nbsp;注解。</p> <p>二、发现问题</p> <p>在网上查阅资料的过程中，发现大部分作者给出的解释并不全面，大多数都是说，前台向后台传递数据用@DateTimeFormat注解。而后台向前台传递就用@JsonFormat注解。。实际上@DateTimeFormat注解只会在类似@RequestParam的请求参数（url拼接的参数才生效，如果是放到RequestBody中的form-data也是无效的）上生效，如果@DateTimeFormat放到@RequestBody下是无效的。而@JsonFormat注解却可以转换这种情况下的参数。</p> <p>三、对比总结及使用</p> <p>&nbsp; &nbsp; &nbsp;1.&nbsp;@DateTimeFormat用于前台向后台&nbsp;，将传入的字符串转换为Date类型。当然只能转换类似于@RequestParam()这种url拼接的参数。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; ①引入依赖（spring就不写了）</p> <pre><code>&lt;!-- joda-time --&gt; &lt;dependency&gt; &lt;groupId&gt;joda-time&lt;/groupId&gt; &lt;artifactId&gt;joda-time&lt;/artifactId&gt; &lt;version&gt;2.3&lt;/version&gt; &lt;/dependency&gt;</code></pre> <p>&nbsp; &nbsp; &nbsp; &nbsp;②&nbsp;在实体类的需要类型转换的属性上加上@DateTimeFormat注解。</p> <pre><code>package com.**.model;  import lombok.Data;  @Data public class User {     private Integer id;     private String userName;     @DateTimeFormat(pattern = "yyyy-MM-dd")     private Date birth; }</code></pre> <p>&nbsp; &nbsp;2. @JsonFormat&nbsp;后台向前台，将日期格式的数据格式转化为们所需要的数据。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;前台向后台，将 Content-Type类型为application/json的字符串转换为Date类型。u</p> <p>&nbsp; &nbsp; &nbsp; ①.&nbsp;引入依赖（spring boot项目已经帮我们引入了，所以不需要重复引入）</p> <pre><code>&lt;dependency&gt; &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt; &lt;artifactId&gt;jackson-annotations&lt;/artifactId&gt; &lt;version&gt;2.8.8&lt;/version&gt; &lt;/dependency&gt;  &lt;dependency&gt; &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt; &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt; &lt;version&gt;2.8.8&lt;/version&gt; &lt;/dependency&gt;  &lt;dependency&gt; &lt;groupId&gt;org.codehaus.jackson&lt;/groupId&gt; &lt;artifactId&gt;jackson-mapper-asl&lt;/artifactId&gt; &lt;version&gt;1.9.13&lt;/version&gt; &lt;/dependency&gt;</code></pre> <p>&nbsp; &nbsp; &nbsp;②&nbsp;在实体类的需要类型转换的属性上加上@JsonFormat注解。</p> <pre><code>package com.**.model;  import lombok.Data;  @Data public class User {     private Integer id;     private String userName;     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")     private Date birth; }</code></pre> <p>3.参数解释</p> <pre><code>@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8") pattern ：需要转换的日期格式 timezone:时区，北京时间东八区 所以是GMT+8</code></pre> <p>四、总结</p> <p>&nbsp; &nbsp; 1.后台向前台的日期类型格式化。只需要@JsonFormat一个注解就可以了</p> <p>&nbsp; &nbsp; 2.前台向后台则需要&nbsp;需求分析到底使用@JsonFormat注解&nbsp;还是 @DateTimeFormat注解。</p> <p>原文链接：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.jhone.top"  rel="nofollow">http://www.jhone.top</a></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-38617.htm">农大宠物医院医生简介（农大宠物医院营业时间）</a></p>
+                                        <p>下一个：<a href="/news/article-39124.htm">女孩十大最好专业初中学历（女生最吃香的十大专业初中学历）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-22996.htm" title="厦门同安百姓宠物网 厦门同安百姓宠物网招聘">厦门同安百姓宠物网 厦门同安百姓宠物网招聘</a></li>
+                        <li class="py-2"><a href="/news/article-33324.htm" title="新手养猫适合养什么猫（新手养猫适合养什么猫不易生病）">新手养猫适合养什么猫（新手养猫适合养什么猫不易生病）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-node-share.htm" title="「12月18日」最高速度22.1M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接">「12月18日」最高速度22.1M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-clash-windows.htm" title="「1月11日」最高速度21.3M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费手机节点订阅链接">「1月11日」最高速度21.3M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28094.htm" title="动物疫苗接种时间要求是什么 动物疫苗接种时间要求是什么意思">动物疫苗接种时间要求是什么 动物疫苗接种时间要求是什么意思</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-29-node-share.htm" title="「10月29日」最高速度22.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「10月29日」最高速度22.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-clash-windows.htm" title="「12月25日」最高速度22.9M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接">「12月25日」最高速度22.9M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-clash-subscribe.htm" title="「12月2日」最高速度20.1M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「12月2日」最高速度20.1M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25313.htm" title="开一家宠物美容店（开一家宠物美容店赚钱吗）">开一家宠物美容店（开一家宠物美容店赚钱吗）</a></li>
+                        <li class="py-2"><a href="/news/article-20244.htm" title="佳雯宠物医院客服电话是多少啊（佳雯宠物医院总部地址）">佳雯宠物医院客服电话是多少啊（佳雯宠物医院总部地址）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
