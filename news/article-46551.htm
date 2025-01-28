@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-46551.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="例如有这么一个查询语句： select * from server where ip in (....) 同时一个存放ip 的列表 ：["1.1.1.1","2.2.2.2","2.2.2.2"] 我" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-46551.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/5875aa4d5fcacc52a02b42044a332c0e.webp" />
+        <meta property="og:release_date" content="2025-01-26T09:59:44" />
+    <meta property="og:updated_time" content="2025-01-26T09:59:44" />
+        <meta property="og:description" content="例如有这么一个查询语句： select * from server where ip in (....) 同时一个存放ip 的列表 ：["1.1.1.1","2.2.2.2","2.2.2.2"] 我" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+                        <a href="/" class="logo">V2ray Clash Free</a>
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p align="center"><img decoding="async" src="http://img.555519.xyz/uploads/20221230/152df90ee845ae160e665c6639be1818.jpg" alt="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题"></p> <p>例如有这么一个查询语句：</p> <p>select * from server where ip in (....)</p> <p>同时一个存放ip 的列表 ：["1.1.1.1","2.2.2.2","2.2.2.2"]</p> <p>我们希望在查询语句的in中放入这个Ip列表，这里我们首先会想到的是用join来对这个列表处理成一个字符串，如下：</p> <p>&gt;&gt;&gt; a=["1.1.1.1","2.2.2.2","2.2.2.2"]</p> <p>&gt;&gt;&gt; ",".join(a)</p> <p>"1.1.1.1,2.2.2.2,2.2.2.2"</p> <p>可以看到，join后的结果并不是我们想要的结果，因为引号的问题。所以我们会想到另外的办法：</p> <p>&gt;&gt;&gt; a=["1.1.1.1","2.2.2.2","2.2.2.2"]</p> <p>&gt;&gt;&gt; ",".join([""%s"" % item for item in a])</p> <p>""1.1.1.1","2.2.2.2","2.2.2.2""</p> <p>同样会有引号的问题，这个时候我们可以通过这个字符串去掉前后的双引号来达到目的。</p> <p>但是，其实我们还有一种更安全更方便的方式，如下：</p> <p>&gt;&gt;&gt; a = ["1.1.1.1","2.2.2.2","3.3.3.3"]</p> <p>&gt;&gt;&gt; select_str = "select * from server where ip in (%s)" % ",".join(["%s"] * len(a))</p> <p>&gt;&gt;&gt; select_str</p> <p>"select * from server where ip in (%s,%s,%s)"</p> <p>这里我们先根据Ip列表的长度来生成对应的参数位置，然后通过MySQLdb模块中的execute函数来执行：</p> <p>cursor.execute(select_str,a)</p> <p>这样子就可以了</p> <p>补充知识：python中pymysql使用in时候的传参方式</p> <p># 注意这里使用in时候传参的方式 {topic_list}这不用加引号，是因为里面需要的值 topic_id是int</p> <p>sql = "select f_topic_id, f_topic_name, f_partition_num, f_replicas_factor, f_cluster_id, f_topic_token, f_log_retention_time, f_created_at, f_created_by, f_modified_at, f_modified_by from tkafka_topic where f_topic_id in ({topic_list});".format(topic_list=topic_list)</p> <p>总结：</p> <p>以前一开始以为传参是看传过来的参数是什么类型来加引号的，int不加引号，str加引号</p> <p>但是今天才知道，看的是里面接收参数的变量需要什么类型来加引号的。</p> <p>以上这篇python 解决mysql where in 对列表(list,,array)问题就是小编分享给大家的全部内容了，希望能给大家一个参考，也希望大家多多支持云海天教程。</p> <p>原文链接：https://blog.csdn.net/u011085172/article/details/79044490</p> </div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-46061.htm">中牧实业犬疫苗好嘛（中牧疫苗官方网站）</a></p>
+                                        <p>下一个：<a href="/news/article-46552.htm">宠物食品加工厂要投资多少钱 宠物食品加工厂要投资多少钱呢</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-24122.htm" title="小程序中实现token过期重新登录再重新请求业务接口">小程序中实现token过期重新登录再重新请求业务接口</a></li>
+                        <li class="py-2"><a href="/news/article-37631.htm" title="佳雯宠物医院几点开门营业的（佳雯宠物医院总院投诉电话）">佳雯宠物医院几点开门营业的（佳雯宠物医院总院投诉电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-free-shadowrocket-node.htm" title="「1月21日」最高速度20.8M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费手机节点订阅链接">「1月21日」最高速度20.8M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23453.htm" title="动物疫苗制备流程图 动物疫苗制备流程图片">动物疫苗制备流程图 动物疫苗制备流程图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-clash-subscribe.htm" title="「10月30日」最高速度19.9M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「10月30日」最高速度19.9M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31297.htm" title="中国兽药十大名牌厂家排名河南有哪些（河南省兽药前十名企业）">中国兽药十大名牌厂家排名河南有哪些（河南省兽药前十名企业）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-free-shadowrocket-node.htm" title="「12月11日」最高速度19.2M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费手机节点订阅链接">「12月11日」最高速度19.2M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-free-v2ray.htm" title="「12月22日」最高速度18.4M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费手机节点订阅链接">「12月22日」最高速度18.4M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-47038.htm" title="MySQL Router重装后重新连接集群进行引导出现的——此主机中之前已配置过的问题">MySQL Router重装后重新连接集群进行引导出现的——此主机中之前已配置过的问题</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-clash-node.htm" title="「1月2日」最高速度22.7M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费手机节点订阅链接">「1月2日」最高速度22.7M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费手机节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
