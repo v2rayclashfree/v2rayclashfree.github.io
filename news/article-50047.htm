@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-50047.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Citus 可以使用分片跨多台计算机来水平缩放查询。 其查询引擎会将这些服务器的传入 SQL 查询并行化，加快大型数据集上的响应。 它为需要比其他部署选项更大规模和更高性能的应用程序提供服务：通常，工" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-50047.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/e7444b8b576d241390017bdaf98e8c61.webp" />
+        <meta property="og:release_date" content="2025-02-02T09:27:59" />
+    <meta property="og:updated_time" content="2025-02-02T09:27:59" />
+        <meta property="og:description" content="Citus 可以使用分片跨多台计算机来水平缩放查询。 其查询引擎会将这些服务器的传入 SQL 查询并行化，加快大型数据集上的响应。 它为需要比其他部署选项更大规模和更高性能的应用程序提供服务：通常，工" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="logo">
+                        <span>V2ray Clash Free</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p><img decoding="async" src="http://img.555519.xyz/uploads3/20220507/70b2bcf9737f18eea95a40d00f6468cf.jpg" alt="Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具"></p> <p><code>Citus</code> 可以使用分片跨多台计算机来水平缩放查询。 其查询引擎会将这些服务器的传入 <code>SQL</code> 查询并行化，加快大型数据集上的响应。 它为需要比其他部署选项更大规模和更高性能的应用程序提供服务：通常，工作负载接近或已经超过 <code>100 GB</code> 的数据。</p> <p><code>Citus</code> 提供：</p> <ul> <li>使用分片跨多个计算机进行水平缩放</li> <li>将这些服务器的查询并行化，加快大型数据集上的响应</li> <li>为多租户应用程序、实时运营分析以及高吞吐量事务工作负载提供卓越的支持</li> </ul> <h2 id="citus-11-文档官方仓库">Citus 11 文档官方仓库</h2> <p>拉取仓库到本地</p> <pre><code class="language-sh">git clone https://github.com/citusdata/citus_docs/tree/v11.0-beta </code></pre> <h2 id="文档运行环境设置">文档运行环境设置</h2> <h3 id="pyenv">pyenv</h3> <p>一个 <code>Python</code> 版本管理工具。</p> <h3 id="pyenv-installer">pyenv-installer</h3> <p>安装 <code>pyenv</code> 和它相关的插件(如：<code>virtualenv</code> 虚拟环境等。)</p> <p>这里以 <code>Mac</code> 为例：</p> <pre><code class="language-sh">curl https://pyenv.run | bash </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220507/7485fe07a6078274c01421dfa15d32f9.jpg" alt="Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具"></p> <h3 id="安装对应-python-版本">安装对应 python 版本</h3> <p><code>cat runtime.txt</code></p> <pre><code class="language-sh">python-3.7.5 </code></pre> <p>安装：</p> <pre><code class="language-sh">pyenv install 3.7.5 </code></pre> <h3 id="设置虚拟环境">设置虚拟环境</h3> <pre><code class="language-sh"># 切换版本 pyenv global 3.7.5  # 进入文档目录，创建虚拟环境 cd ctius_docs python -m venv .venv  # 激活虚拟环境 source .venv/bin/activate </code></pre> <h3 id="安装-requirementstxt">安装 <code>requirements.txt</code><br /> </h3> <p><code>cat requirements.txt</code></p> <pre><code class="language-sh">Sphinx==4.0.2 sphinx_rtd_theme_citus==0.5.25 docutils==0.16 sphinx-autobuild==0.7.1s </code></pre> <p>注意，这里加了一项 <code>sphinx-autobuild</code></p> <p>安装：</p> <pre><code class="language-sh">pip install -r requirements.txt </code></pre> <h2 id="运行文档watch-模式">运行文档(watch 模式)</h2> <pre><code class="language-sh">make watch </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220507/d48dbc183accf94563b042703f111e62.jpg" alt="Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具"></p> <p>转到 <code>http://127.0.0.1:8000</code> 进行查看。</p> <h2 id="更多">更多</h2> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://mp.weixin.qq.com/s/1X65AAs8O1qcddf5wqpRRQ"  target="_blank"  rel="nofollow">「在 Kubernetes 上运行 Pgpool-Il」实现 PostgreSQL 查询(读)负载均衡和连接池</a></li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-49527.htm">动物疫苗接种时间表图片大全及价格查询（动物疫苗的使用方法及注意事项）</a></p>
+                                        <p>下一个：<a href="/news/article-50048.htm">喵咪驱虫怎么做好吃（喵咪如何驱虫）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-ssr-node.htm" title="「12月14日」最高速度21.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费手机节点订阅链接">「12月14日」最高速度21.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-41583.htm" title="附近宠物领养中心（附近宠物领养中心电话地址）">附近宠物领养中心（附近宠物领养中心电话地址）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-high-speed-nodes.htm" title="「12月28日」最高速度22.2M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费手机节点订阅链接">「12月28日」最高速度22.2M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-clash-v2ray-ss-ssr.htm" title="「1月22日」最高速度18.8M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费手机节点订阅链接">「1月22日」最高速度18.8M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20705.htm" title="一年级湖南卫视（一年级湖南卫视 宋佳）">一年级湖南卫视（一年级湖南卫视 宋佳）</a></li>
+                        <li class="py-2"><a href="/news/article-48398.htm" title="宠物领养app设计 宠物领养APP设计思路">宠物领养app设计 宠物领养APP设计思路</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-node-share-links.htm" title="「11月25日」最高速度22.8M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「11月25日」最高速度22.8M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-free-clash-subscribe.htm" title="「11月23日」最高速度20.1M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「11月23日」最高速度20.1M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-v2ray-subscribe.htm" title="「1月13日」最高速度19.3M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费手机节点订阅链接">「1月13日」最高速度19.3M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-clash-subscribe.htm" title="「12月12日」最高速度20M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费手机节点订阅链接">「12月12日」最高速度20M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费手机节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

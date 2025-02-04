@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-31868.htm" />
@@ -10,7 +10,35 @@
         <meta name="description" content="目录  前言 单向绑定 vs 双向绑定 单向数据流 vs 双向数据流 为什么说v-model只是语法糖 总结 参考资料    前言 众所周知，Vue中更加推荐单向数据流的状态管理模式(比如Vuex)，" />
     
     <!-- Favicon -->
-    <link href="__ADDON__/img/v2rayclashfree/favicon.ico" rel="icon">
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-31868.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/cf61454141c8bb886a03b156d21d6f49.webp" />
+        <meta property="og:release_date" content="2024-12-27T10:02:39" />
+    <meta property="og:updated_time" content="2024-12-27T10:02:39" />
+        <meta property="og:description" content="目录  前言 单向绑定 vs 双向绑定 单向数据流 vs 双向数据流 为什么说v-model只是语法糖 总结 参考资料    前言 众所周知，Vue中更加推荐单向数据流的状态管理模式(比如Vuex)，" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
@@ -100,16 +128,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-6-19-free-high-speed-nodes.htm" title="「6月19日」最高速度22.3M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「6月19日」最高速度22.3M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-15-clash-node.htm" title="「10月15日」最高速度21.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「10月15日」最高速度21.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-23-clash-v2ray-ss-ssr.htm" title="「6月23日」最高速度21.6M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「6月23日」最高速度21.6M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-31297.htm" title="中国兽药十大名牌厂家排名河南有哪些（河南省兽药前十名企业）">中国兽药十大名牌厂家排名河南有哪些（河南省兽药前十名企业）</a></li>
-                        <li class="py-2"><a href="/news/article-21617.htm" title="vue &#8211; vue基础/vue核心内容_在线工具">vue &#8211; vue基础/vue核心内容_在线工具</a></li>
-                        <li class="py-2"><a href="/news/article-26711.htm" title="附近哪里可以领养狗狗 附近哪里可以领养狗狗狗">附近哪里可以领养狗狗 附近哪里可以领养狗狗狗</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-v2ray.htm" title="「12月17日」最高速度20.2M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费手机节点订阅链接">「12月17日」最高速度20.2M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费手机节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-6-free-subscribe-node.htm" title="「10月6日」最高速度19.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「10月6日」最高速度19.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-26710.htm" title="自己拿疫苗去宠物医院打多少钱啊（自己带疫苗去宠物医院）">自己拿疫苗去宠物医院打多少钱啊（自己带疫苗去宠物医院）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-22-free-v2ray.htm" title="「12月22日」最高速度18.4M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费手机节点订阅链接">「12月22日」最高速度18.4M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40094.htm" title="宠物粮市场分析报告（宠物粮市场分析报告模板）">宠物粮市场分析报告（宠物粮市场分析报告模板）</a></li>
+                        <li class="py-2"><a href="/news/article-44054.htm" title="动物疫苗指数（动物疫苗市场规模）">动物疫苗指数（动物疫苗市场规模）</a></li>
+                        <li class="py-2"><a href="/news/article-43074.htm" title="动物接种疫苗多少钱一次啊深圳 动物接种疫苗多少钱一次啊深圳市">动物接种疫苗多少钱一次啊深圳 动物接种疫苗多少钱一次啊深圳市</a></li>
+                        <li class="py-2"><a href="/news/article-38105.htm" title="猫咪三针疫苗多少钱一只（猫的三针疫苗多少钱）">猫咪三针疫苗多少钱一只（猫的三针疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-27173.htm" title="vue中使用$http.post请求传参的错误及解决_vue.js">vue中使用$http.post请求传参的错误及解决_vue.js</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-subscribe-node.htm" title="「12月5日」最高速度21.8M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「12月5日」最高速度21.8M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-clash-windows.htm" title="「1月11日」最高速度21.3M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费手机节点订阅链接">「1月11日」最高速度21.3M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-45552.htm" title="宠物粮食代工厂有哪些 宠物粮食代工厂有哪些品牌">宠物粮食代工厂有哪些 宠物粮食代工厂有哪些品牌</a></li>
+                        <li class="py-2"><a href="/news/article-21620.htm" title="淮北动物救助（淮北动物救助站电话）">淮北动物救助（淮北动物救助站电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-clash-v2ray-ss-ssr.htm" title="「11月18日」最高速度19.2M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「11月18日」最高速度19.2M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -121,28 +149,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
@@ -181,7 +197,7 @@
     <!-- end of copyright -->
     <!-- Back To Top Button -->
     <button onclick="topFunction()" id="myBtn">
-        <img href="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+        <img src="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
     </button>
     <!-- end of back to top button -->
     <!-- Scripts -->
