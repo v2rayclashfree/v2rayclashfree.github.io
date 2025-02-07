@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-51612.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>使用SpringBoot配置多数据源的经验分享_java</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="目录  1. 引入jar包 2. properties配置 3. 分别配置两个数据源 4. Dao目录 5. Entity 6. Mapper文件 7. Controller测试 8. 结果验证   " />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-51612.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="使用SpringBoot配置多数据源的经验分享_java" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/96edce11f0719ed6d47137a7a806d531.webp" />
+        <meta property="og:release_date" content="2025-02-05T08:20:51" />
+    <meta property="og:updated_time" content="2025-02-05T08:20:51" />
+        <meta property="og:description" content="目录  1. 引入jar包 2. properties配置 3. 分别配置两个数据源 4. Dao目录 5. Entity 6. Mapper文件 7. Controller测试 8. 结果验证   " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="使用SpringBoot配置多数据源的经验分享_java">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="logo">
+                        <span>V2ray Clash Free</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系</a>
+                    </li>
+
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>使用SpringBoot配置多数据源的经验分享_java</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">1. 引入jar包</a></li> <li><a href="#_label1" rel="nofollow">2. properties配置</a></li> <li><a href="#_label2" rel="nofollow">3. 分别配置两个数据源</a></li> <li><a href="#_label3" rel="nofollow">4. Dao目录</a></li> <li><a href="#_label4" rel="nofollow">5. Entity</a></li> <li><a href="#_label5" rel="nofollow">6. Mapper文件</a></li> <li><a href="#_label6" rel="nofollow">7. Controller测试</a></li> <li><a href="#_label7" rel="nofollow">8. 结果验证</a></li> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>1. 引入jar包</h2> <p>pom.xml文件</p> <div class="ay1code"> <pre class="brush:java;">&lt;?xml version="1.0" encoding="UTF-8"?&gt;  &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;      &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;      &lt;parent&gt;          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;          &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;          &lt;version&gt;2.5.6&lt;/version&gt;          &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;      &lt;/parent&gt;      &lt;groupId&gt;com.multi.datasource&lt;/groupId&gt;      &lt;artifactId&gt;demo&lt;/artifactId&gt;      &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;      &lt;name&gt;demo&lt;/name&gt;      &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;      &lt;properties&gt;          &lt;java.version&gt;1.8&lt;/java.version&gt;      &lt;/properties&gt;      &lt;dependencies&gt;            &lt;dependency&gt;              &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;              &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;          &lt;/dependency&gt;            &lt;dependency&gt;              &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;              &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;          &lt;/dependency&gt;            &lt;dependency&gt;              &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;              &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;              &lt;version&gt;1.3.2&lt;/version&gt;          &lt;/dependency&gt;            &lt;dependency&gt;              &lt;groupId&gt;com.alibaba&lt;/groupId&gt;              &lt;artifactId&gt;druid&lt;/artifactId&gt;              &lt;version&gt;1.1.8&lt;/version&gt;          &lt;/dependency&gt;            &lt;dependency&gt;              &lt;groupId&gt;mysql&lt;/groupId&gt;              &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;          &lt;/dependency&gt;            &lt;dependency&gt;              &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;              &lt;artifactId&gt;lombok&lt;/artifactId&gt;              &lt;version&gt;1.16.22&lt;/version&gt;          &lt;/dependency&gt;            &lt;dependency&gt;              &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;              &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;              &lt;scope&gt;test&lt;/scope&gt;          &lt;/dependency&gt;        &lt;/dependencies&gt;        &lt;build&gt;          &lt;plugins&gt;              &lt;plugin&gt;                  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;                  &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;                  &lt;configuration&gt;                      &lt;excludes&gt;                          &lt;exclude&gt;                              &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;                              &lt;artifactId&gt;lombok&lt;/artifactId&gt;                          &lt;/exclude&gt;                      &lt;/excludes&gt;                  &lt;/configuration&gt;              &lt;/plugin&gt;          &lt;/plugins&gt;      &lt;/build&gt;    &lt;/project&gt;    </pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>2. properties配置</h2> <p>分别准备两个数据源</p> <div class="ay1code"> <pre class="brush:java;">server.port=18888  mybatis.mapper-locations=classpath:mapper/*.xml    my1.datasource.url=jdbc:mysql://10.0.0.125:3306/wyl?autoReconnect=true  my1.datasource.driverClassName=com.mysql.cj.jdbc.Driver  my1.datasource.username=root  my1.datasource.password=123456    my2.datasource.url=jdbc:mysql://10.0.0.160:3306/wyl?autoReconnect=true  my2.datasource.driverClassName=com.mysql.cj.jdbc.Driver  my2.datasource.username=root  my2.datasource.password=123456    </pre> </div> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>3. 分别配置两个数据源</h2> <p><strong>第一个数据源</strong></p> <div class="ay1code"> <pre class="brush:java;">package com.multi.datasource.config;    import com.alibaba.druid.pool.DruidDataSource;  import org.apache.ibatis.session.SqlSessionFactory;  import org.mybatis.spring.SqlSessionFactoryBean;  import org.mybatis.spring.annotation.MapperScan;  import org.springframework.beans.factory.annotation.Qualifier;  import org.springframework.beans.factory.annotation.Value;  import org.springframework.context.annotation.Bean;  import org.springframework.context.annotation.Configuration;  import org.springframework.core.io.support.PathMatchingResourcePatternResolver;  import org.springframework.jdbc.datasource.DataSourceTransactionManager;    import javax.sql.DataSource;    @Configuration  @MapperScan(basePackages = My1DataSourceConfig.PACKAGE, sqlSessionFactoryRef = "my1SqlSessionFactory")  public class My1DataSourceConfig {        static final String PACKAGE = "com.multi.datasource.dao.my1";      static final String MAPPER_LOCATION = "classpath:mapper/*.xml";        @Value("${my1.datasource.url}")      private String url;        @Value("${my1.datasource.username}")      private String user;        @Value("${my1.datasource.password}")      private String password;        @Value("${my1.datasource.driverClassName}")      private String driverClass;        @Bean(name = "my1DataSource")      public DataSource my1DataSource() {          DruidDataSource dataSource = new DruidDataSource();          dataSource.setDriverClassName(driverClass);          dataSource.setUrl(url);          dataSource.setUsername(user);          dataSource.setPassword(password);          dataSource.setMaxWait(Integer.MAX_VALUE);          dataSource.setTestOnBorrow(true);          dataSource.setTestOnReturn(true);          dataSource.setTestWhileIdle(true);          return dataSource;      }        @Bean(name = "my1TransactionManager")      public DataSourceTransactionManager my1TransactionManager() {          return new DataSourceTransactionManager(my1DataSource());      }        @Bean(name = "my1SqlSessionFactory")      public SqlSessionFactory my1SqlSessionFactory(@Qualifier("my1DataSource") DataSource my1DataSource)              throws Exception {          final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();          sessionFactory.setDataSource(my1DataSource);          sessionFactory.setMapperLocations(                  new PathMatchingResourcePatternResolver().getResources(My1DataSourceConfig.MAPPER_LOCATION));          return sessionFactory.getObject();      }  }  </pre> </div> <p><strong>第二个数据源</strong></p> <div class="ay1code"> <pre class="brush:java;">package com.multi.datasource.config;    import com.alibaba.druid.pool.DruidDataSource;  import org.apache.ibatis.session.SqlSessionFactory;  import org.mybatis.spring.SqlSessionFactoryBean;  import org.mybatis.spring.annotation.MapperScan;  import org.springframework.beans.factory.annotation.Qualifier;  import org.springframework.beans.factory.annotation.Value;  import org.springframework.context.annotation.Bean;  import org.springframework.context.annotation.Configuration;  import org.springframework.core.io.support.PathMatchingResourcePatternResolver;  import org.springframework.jdbc.datasource.DataSourceTransactionManager;    import javax.sql.DataSource;    @Configuration  @MapperScan(basePackages = My1DataSourceConfig.PACKAGE, sqlSessionFactoryRef = "my1SqlSessionFactory")  public class My1DataSourceConfig {        static final String PACKAGE = "com.multi.datasource.dao.my1";      static final String MAPPER_LOCATION = "classpath:mapper/*.xml";        @Value("${my1.datasource.url}")      private String url;        @Value("${my1.datasource.username}")      private String user;        @Value("${my1.datasource.password}")      private String password;        @Value("${my1.datasource.driverClassName}")      private String driverClass;        @Bean(name = "my1DataSource")      public DataSource my1DataSource() {          DruidDataSource dataSource = new DruidDataSource();          dataSource.setDriverClassName(driverClass);          dataSource.setUrl(url);          dataSource.setUsername(user);          dataSource.setPassword(password);          dataSource.setMaxWait(Integer.MAX_VALUE);          dataSource.setTestOnBorrow(true);          dataSource.setTestOnReturn(true);          dataSource.setTestWhileIdle(true);          return dataSource;      }        @Bean(name = "my1TransactionManager")      public DataSourceTransactionManager my1TransactionManager() {          return new DataSourceTransactionManager(my1DataSource());      }        @Bean(name = "my1SqlSessionFactory")      public SqlSessionFactory my1SqlSessionFactory(@Qualifier("my1DataSource") DataSource my1DataSource)              throws Exception {          final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();          sessionFactory.setDataSource(my1DataSource);          sessionFactory.setMapperLocations(                  new PathMatchingResourcePatternResolver().getResources(My1DataSourceConfig.MAPPER_LOCATION));          return sessionFactory.getObject();      }  }  </pre> </div> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>4. Dao目录</h2> <p>为了区分两个数据源，分别设置了不同的目录</p> <div class="ay1code"> <pre class="brush:java;">package com.multi.datasource.dao.my1;    import com.multi.datasource.entity.UserEntity;  import org.apache.ibatis.annotations.Mapper;    @Mapper  public interface Test1Mapper {            UserEntity query();        }  </pre> </div> <div class="ay1code"> <pre class="brush:java;">package com.multi.datasource.dao.my2;    import com.multi.datasource.entity.UserEntity;  import org.apache.ibatis.annotations.Mapper;    @Mapper  public interface Test2Mapper {            UserEntity query();        }  </pre> </div> <p class="maodian"><a name="_label4" rel="nofollow"></a></p> <h2>5. Entity</h2> <div class="ay1code"> <pre class="brush:java;">package com.multi.datasource.entity;    import lombok.Data;    @Data  public class UserEntity {        private String userName;    }  </pre> </div> <p class="maodian"><a name="_label5" rel="nofollow"></a></p> <h2>6. Mapper文件</h2> <p>从my1数据源查询</p> <div class="ay1code"> <pre class="brush:xml;">&lt;?xml version="1.0" encoding="UTF-8"?&gt;          &lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;  &lt;mapper namespace="com.multi.datasource.dao.my1.Test1Mapper"&gt;    &lt;select id="query" resultType="com.multi.datasource.entity.UserEntity"&gt;          select user_name as userName from t_user      &lt;/select&gt;    &lt;/mapper&gt;  </pre> </div> <p>从my2数据源查询</p> <div class="ay1code"> <pre class="brush:xml;">&lt;?xml version="1.0" encoding="UTF-8"?&gt;  &lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;  &lt;mapper namespace="com.multi.datasource.dao.my2.Test2Mapper"&gt;            &lt;select id="query" resultType="com.multi.datasource.entity.UserEntity"&gt;          select user_name as userName from t_user      &lt;/select&gt;        &lt;/mapper&gt;  </pre> </div> <p class="maodian"><a name="_label6" rel="nofollow"></a></p> <h2>7. Controller测试</h2> <div class="ay1code"> <pre class="brush:java;">package com.multi.datasource.controller;    import com.multi.datasource.dao.my1.Test1Mapper;  import com.multi.datasource.dao.my2.Test2Mapper;  import com.multi.datasource.entity.UserEntity;  import org.springframework.web.bind.annotation.RequestMapping;  import org.springframework.web.bind.annotation.RestController;    import javax.annotation.Resource;    @RestController  public class TestController {        @Resource      private Test1Mapper test1Mapper;        @Resource      private Test2Mapper test2Mapper;        @RequestMapping("query")      public void query() {          UserEntity user1 = test1Mapper.query();          System.out.println("my1 dataSource:" + user1);              UserEntity user2 = test2Mapper.query();          System.out.println("my2 dataSource:" + user2);      }    }    </pre> </div> <p>两个数据源，对应的<code>user_name</code>分别是<code>zhangsan和lisi</code></p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220411/482c84e75f227273b4bdcb0e6d8eb7aa.jpg"></p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220411/67e25da18ea80bfbf75608369b2aa153.jpg"></p> <p class="maodian"><a name="_label7" rel="nofollow"></a></p> <h2>8. 结果验证</h2> <p>访问 <code>http://localhost:18888/query</code>，结果如下</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220411/c1cfb3e27a39ded14d8df275389acd70.jpg"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-51061.htm">猫咪驱虫后跳蚤多久会死（猫驱完虫身上的跳蚤卵多久消失）</a></p>
+                                        <p>下一个：<a href="/news/article-51613.htm">动物疫苗监管部门是哪里的公司（动物疫苗经营）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-node-share.htm" title="「11月13日」最高速度20.7M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月13日」最高速度20.7M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-49526.htm" title="Java高级之LinkedList的ListIterator迭代器">Java高级之LinkedList的ListIterator迭代器</a></li>
+                        <li class="py-2"><a href="/news/article-47037.htm" title="MySQL VARCHAR列的最大长度是多少？">MySQL VARCHAR列的最大长度是多少？</a></li>
+                        <li class="py-2"><a href="/news/article-38105.htm" title="猫咪三针疫苗多少钱一只（猫的三针疫苗多少钱）">猫咪三针疫苗多少钱一只（猫的三针疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-48007.htm" title="UVM如何处理out-of-order乱序传输">UVM如何处理out-of-order乱序传输</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-clash-v2ray-ss-ssr.htm" title="「1月22日」最高速度18.8M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费手机节点订阅链接">「1月22日」最高速度18.8M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22996.htm" title="厦门同安百姓宠物网 厦门同安百姓宠物网招聘">厦门同安百姓宠物网 厦门同安百姓宠物网招聘</a></li>
+                        <li class="py-2"><a href="/news/article-39601.htm" title="centos 7 mini版 rpm 安装mysql5.7过程">centos 7 mini版 rpm 安装mysql5.7过程</a></li>
+                        <li class="py-2"><a href="/news/article-50048.htm" title="喵咪驱虫怎么做好吃（喵咪如何驱虫）">喵咪驱虫怎么做好吃（喵咪如何驱虫）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-shadowrocket-node.htm" title="「12月9日」最高速度21.5M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「12月9日」最高速度21.5M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
