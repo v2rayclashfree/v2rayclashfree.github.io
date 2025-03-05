@@ -62,8 +62,10 @@
         <!-- Navigation -->
     <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
         <div class="container">
-                        <a href="/" class="logo">V2ray Clash Free</a>
-                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <a href="/" class="logo">
+                        <span>V2ray Clash Free</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
             <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -80,16 +82,12 @@
                         <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
                     </li>
                                         <li class="nav-item">
-                        <a class="nav-link" href="/news/">新闻资讯</a>
+                        <a class="nav-link" href="/client.htm">客户端</a>
                     </li>
                                         <li class="nav-item">
-                        <a class="nav-link" href="#">关于</a>
+                        <a class="nav-link" href="/news/">新闻资讯</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">联系</a>
-                    </li>
-
-                </ul>
+                                    </ul>
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
@@ -117,7 +115,6 @@
                                     <input type="hidden" id="share-website-info" data-name="" data-url="">
                   				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="JavaScannernextnextLine_0" rel="nofollow"></a>JavaScanner的next与nextLine方法</h2> <h2> <a id="1__2" rel="nofollow"></a>1. 前言</h2> <p>在Scanner类中 有许多的方法 常用的有</p> <pre><code class="prism language-java"><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>、<span class="token function">nextFloat</span><span class="token punctuation">(</span><span class="token punctuation">)</span>、<span class="token function">nextDouble</span><span class="token punctuation">(</span><span class="token punctuation">)</span>、<span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>、<span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span> </code></pre> <p>前三个方法分别用于输入 int、float和double类型<br /> 以空格作为分隔符 将分隔后的内容赋值给变量 以换行符作为结束符</p> <h2> <a id="2__11" rel="nofollow"></a>2. 我们主要关注后面两种方法的区别</h2> <p><strong>（1）next()方法 返回值为String类型</strong></p> <p>以空格作为分隔符 将分隔后的内容赋值给变量 以换行符作为结束符<br /> 测试程序:</p> <pre><code class="prism language-java">		<span class="token class-name">String</span> str<span class="token punctuation">;</span> 		str <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> 		str <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  </code></pre> <p>输入: 123 456 789<br /> 运行结果:<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/6097f2fda46dc3d71812740cf346d9a3.jpg" alt="Java中Scanner的方法"><br /> 可以看到 next方法会按空格分隔用户的输入 按顺序依次将字符串复制给变量 对于没有变量赋值的 789 则舍弃</p> <p><strong>(2) nextLine()方法 返回值String类型</strong><br /> 将用户输入的一行直接返回 不以空格做分隔 以换行符作为结束符</p> <p>测试程序:</p> <pre><code class="prism language-java">		<span class="token class-name">String</span> str<span class="token punctuation">;</span> 		str <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  </code></pre> <p>输入:123 aa xx<br /> 运行结果:<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/85ce079e5a90dff5147d64346c8f7d9e.jpg" alt="Java中Scanner的方法"><br /> nextLine方法没有按空格将用户的输入进行分隔 而是直接输入全部赋值给了字符串</p> <h2> <a id="_47" rel="nofollow"></a>注意:</h2> <p>1.nextInt() 方法 在缓冲区中遇到 空格、回车符等<strong>空白字符</strong>时 会将空白字符前的数据读取走，但空白符<strong>不会</strong>被处理掉，依然留在缓冲区中。<br /> 2.nextLine() 方法 在缓冲区中读取一行数据 这行数据以回车符为结束标志，nextLine会把包括回车符在内的数据全部提走 缓冲区<strong>不会</strong>有回车符残留。</p> <pre><code class="prism language-java">因此使用时要注意 尽量不要在<span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>后接<span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span>方法  这样做，<span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span>会读取到回车符 而不是用户输入的内容 </code></pre> <p>正确的使用方式：</p> <pre><code class="prism language-java"><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//在使用nextLine()方法之前 先将缓冲区中的回车符读取掉</span> <span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-34958.htm">长春宠物同城领养价格（长春市宠物猫领养）</a></p>
                                         <p>下一个：<a href="/news/article-35474.htm">动物疫苗生产厂家排名前十名有哪些呢图片（动物疫苗生产厂家排名前十名有哪些呢图片大全）</a></p>
                                     </div>
                                 </div>
@@ -128,16 +125,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-48007.htm" title="UVM如何处理out-of-order乱序传输">UVM如何处理out-of-order乱序传输</a></li>
-                        <li class="py-2"><a href="/news/article-23452.htm" title="动物美容师一个月多少钱工资（宠物美容师工资是多少）">动物美容师一个月多少钱工资（宠物美容师工资是多少）</a></li>
-                        <li class="py-2"><a href="/news/article-26246.htm" title="动物疫苗有哪些种类及作用图片（动物疫苗有哪几种）">动物疫苗有哪些种类及作用图片（动物疫苗有哪几种）</a></li>
-                        <li class="py-2"><a href="/news/article-47524.htm" title="宠物领养平台app推荐下载苹果（宠物领养软件推荐）">宠物领养平台app推荐下载苹果（宠物领养软件推荐）</a></li>
-                        <li class="py-2"><a href="/news/article-46061.htm" title="中牧实业犬疫苗好嘛（中牧疫苗官方网站）">中牧实业犬疫苗好嘛（中牧疫苗官方网站）</a></li>
-                        <li class="py-2"><a href="/news/article-46552.htm" title="宠物食品加工厂要投资多少钱 宠物食品加工厂要投资多少钱呢">宠物食品加工厂要投资多少钱 宠物食品加工厂要投资多少钱呢</a></li>
-                        <li class="py-2"><a href="/news/article-37146.htm" title="动物医院价目表牌子 动物医院价目表牌子图片大全">动物医院价目表牌子 动物医院价目表牌子图片大全</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-node-subscribe.htm" title="「1月8日」最高速度18.2M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费手机节点订阅链接">「1月8日」最高速度18.2M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费手机节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-22996.htm" title="厦门同安百姓宠物网 厦门同安百姓宠物网招聘">厦门同安百姓宠物网 厦门同安百姓宠物网招聘</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-10-clash-windows.htm" title="「11月10日」最高速度21.5M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「11月10日」最高速度21.5M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-43569.htm" title="猫三联是多久打一针疫苗（猫三联是多久打一针疫苗的）">猫三联是多久打一针疫苗（猫三联是多久打一针疫苗的）</a></li>
+                        <li class="py-2"><a href="/news/article-51061.htm" title="猫咪驱虫后跳蚤多久会死（猫驱完虫身上的跳蚤卵多久消失）">猫咪驱虫后跳蚤多久会死（猫驱完虫身上的跳蚤卵多久消失）</a></li>
+                        <li class="py-2"><a href="/news/article-44054.htm" title="动物疫苗指数（动物疫苗市场规模）">动物疫苗指数（动物疫苗市场规模）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-free-clash-subscribe.htm" title="「2月15日」最高速度22.7M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费手机节点订阅链接">「2月15日」最高速度22.7M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-free-ssr-subscribe.htm" title="「1月29日」最高速度22.9M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费手机节点订阅链接">「1月29日」最高速度22.9M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-53205.htm" title="smdms超市订单管理系统之登录功能">smdms超市订单管理系统之登录功能</a></li>
+                        <li class="py-2"><a href="/news/article-43075.htm" title="特斯拉Model Y降价（特斯拉modely降价最新消息）">特斯拉Model Y降价（特斯拉modely降价最新消息）</a></li>
+                        <li class="py-2"><a href="/news/article-43074.htm" title="动物接种疫苗多少钱一次啊深圳 动物接种疫苗多少钱一次啊深圳市">动物接种疫苗多少钱一次啊深圳 动物接种疫苗多少钱一次啊深圳市</a></li>
+                        <li class="py-2"><a href="/news/article-59914.htm" title="猫三联到底是几针疫苗打（猫三联几针?）">猫三联到底是几针疫苗打（猫三联几针?）</a></li>
+                        <li class="py-2"><a href="/news/article-50559.htm" title="丹阳有宠物收留中心吗在哪里（丹阳口碑最好的宠物医院）">丹阳有宠物收留中心吗在哪里（丹阳口碑最好的宠物医院）</a></li>
                     </ul>
     </div>
 </div>
@@ -149,16 +146,13 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                     </ul>
     </div>
