@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-73711.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>【面试普通人VS高手系列】volatile关键字有什么用？它的实现原理是什么？_在线工具</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="一个工作了6年的Java程序员，在阿里二面，被问到“volatile”关键字。 然后，就没有然后了… 同样，另外一个去美团面试的工作4年的小伙伴，也被“volatile关键字“。 然后，也没有然后了…" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-73711.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="【面试普通人VS高手系列】volatile关键字有什么用？它的实现原理是什么？_在线工具" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/b5c26f3aa43553522487c1d3a503468e.webp" />
+        <meta property="og:release_date" content="2025-03-14T07:06:31" />
+    <meta property="og:updated_time" content="2025-03-14T07:06:31" />
+        <meta property="og:description" content="一个工作了6年的Java程序员，在阿里二面，被问到“volatile”关键字。 然后，就没有然后了… 同样，另外一个去美团面试的工作4年的小伙伴，也被“volatile关键字“。 然后，也没有然后了…" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="【面试普通人VS高手系列】volatile关键字有什么用？它的实现原理是什么？_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="logo">
+                        <span>V2ray Clash Free</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>【面试普通人VS高手系列】volatile关键字有什么用？它的实现原理是什么？_在线工具</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<blockquote> <p>一个工作了6年的Java程序员，在阿里二面，被问到“volatile”关键字。</p> <p>然后，就没有然后了…</p> <p>同样，另外一个去美团面试的工作4年的小伙伴，也被“volatile关键字“。</p> <p>然后，也没有然后了…</p> <p>这个问题说实话，是有点偏底层，但也的确是并发编程里面比较重要的一个关键字。</p> <p>下面，我们来看看普通人和高手对于这个问题的回答吧。</p> </blockquote> <h2 id="普通人">普通人：</h2> <p>嗯…  volatile可以保证可见性。</p> <h2 id="高手">高手：</h2> <p>volatile关键字有两个作用。</p> <ol> <li>可以保证在多线程环境下共享变量的可见性。</li> <li>通过增加内存屏障防止多个指令之间的重排序。</li> </ol> <p>我理解的可见性，是指当某一个线程对共享变量的修改，其他线程可以立刻看到修改之后的值。</p> <p>其实这个可见性问题，我认为本质上是由几个方面造成的。</p> <ol> <li> <p>CPU层面的高速缓存，在CPU里面设计了三级缓存去解决CPU运算效率和内存IO效率问题，但是带来的就是缓存的一致性问题，而在多线程并行执行的情况下，缓存一致性就会导致可见性问题。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/5d136f747efedfbccc440c9d96dded9f.jpg" alt="【面试普通人VS高手系列】volatile关键字有什么用？它的实现原理是什么？_在线工具"></p> <p>所以，对于增加了volatile关键字修饰的共享变量，JVM虚拟机会自动增加一个#Lock汇编指令，这个指令会根据CPU型号自动添加总线锁或/缓存锁</p> <p>我简单说一下这两种锁，</p> <ul> <li>总线锁是锁定了CPU的前端总线，从而导致在同一时刻只能有一个线程去和内存通信，这样就避免了多线程并发造成的可见性。</li> <li>缓存锁是对总线锁的优化，因为总线锁导致了CPU的使用效率大幅度下降，所以缓存锁只针对CPU三级缓存中的目标数据加锁，缓存锁是使用MESI缓存一致性来实现的。</li> </ul> </li> <li> <p>指令重排序，所谓重排序，就是指令的编写顺序和执行顺序不一致，在多线程环境下导致可见性问题。指令重排序本质上是一种性能优化的手段，它来自于几个方面。</p> <ul> <li>CPU层面，针对MESI协议的更进一步优化去提升CPU的利用率，引入了StoreBuffer机制，而这一种优化机制会导致CPU的乱序执行。当然为了避免这样的问题，CPU提供了内存屏障指令，上层应用可以在合适的地方插入内存屏障来避免CPU指令重排序问题。</li> <li>编译器的优化，编译器在编译的过程中，在不改变单线程语义和程序正确性的前提下，对指令进行合理的重排序优化来提升性能。</li> </ul> <p>所以，如果对共享变量增加了volatile关键字，那么在编译器层面，就不会去触发编译器优化，同时再JVM里面，会插入内存屏障指令来避免重排序问题。</p> </li> </ol> <p>当然，除了volatile以外，从JDK5开始，JMM就使用了一种Happens-Before模型去描述多线程之间的内存可见性问题。</p> <p>如果两个操作之间具备Happens-Before关系，那么意味着这两个操作具备可见性关系，不需要再额外去考虑增加volatile关键字来提供可见性保障。</p> <p>以上就是我对这个问题的理解。</p> <h2 id="总结">总结</h2> <p>在我看来，并发编程是每个程序员必须要掌握好的领域，它里面涵盖的设计思想、和并发问题的解决思路、以及作为一个并发工具，都是非常值得深度研究的。</p> <p>我推荐大家去读一下《Java并发编程深度解析与原理实战》这本书，对Java并发这块的内容描述得很清晰。</p> <p>好的，本期的普通人VS高手面试系列就到这里结束了，喜欢的朋友记得点赞和收藏。</p> <p>另外，有任何技术上的问题，职业发展有关的问题，都可以私信我，我会在第一时间回复。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-73045.htm">动物疫苗使用注意事项 动物疫苗使用注意事项有哪些</a></p>
+                                        <p>下一个：<a href="/news/article-73712.htm">什么叫领养宠物的人呢（领养宠物狗是什么意思）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-42074.htm" title="python 有序读取和保存yaml格式的文件">python 有序读取和保存yaml格式的文件</a></li>
+                        <li class="py-2"><a href="/news/article-43569.htm" title="猫三联是多久打一针疫苗（猫三联是多久打一针疫苗的）">猫三联是多久打一针疫苗（猫三联是多久打一针疫苗的）</a></li>
+                        <li class="py-2"><a href="/news/article-38105.htm" title="猫咪三针疫苗多少钱一只（猫的三针疫苗多少钱）">猫咪三针疫苗多少钱一只（猫的三针疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-71053.htm" title="python初始化方法">python初始化方法</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-clash-v2ray-ss-ssr.htm" title="「3月3日」最高速度20.4M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费手机节点订阅链接">「3月3日」最高速度20.4M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-61079.htm" title="2021国考公务员职位一览表（2021公务员考试国考职位表）">2021国考公务员职位一览表（2021公务员考试国考职位表）</a></li>
+                        <li class="py-2"><a href="/news/article-57062.htm" title="宠物领养市场经济可行性分析论文怎么写（宠物领养需求分析）">宠物领养市场经济可行性分析论文怎么写（宠物领养需求分析）</a></li>
+                        <li class="py-2"><a href="/news/article-45063.htm" title="宠物领养协议书范本图片模板高清 宠物领养协议书范本图片模板高清版">宠物领养协议书范本图片模板高清 宠物领养协议书范本图片模板高清版</a></li>
+                        <li class="py-2"><a href="/news/article-64672.htm" title="广州宠物领养网免费领养猫狗（广州哪里有宠物领养机构）">广州宠物领养网免费领养猫狗（广州哪里有宠物领养机构）</a></li>
+                        <li class="py-2"><a href="/news/article-61078.htm" title="宠物美容师有前景吗女生（宠物美容师好不好做）">宠物美容师有前景吗女生（宠物美容师好不好做）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
