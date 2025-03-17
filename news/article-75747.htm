@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-75747.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Blazor 在开发环境保存机密（User Secrets）</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="前言 在应用程序开发的过程中，有的时候需要在代码中保存一些机密的信息，比如微信appkey, 连接字符串,加密密钥，字符串，或者是用户名密码等。通常的做法是保存到一个配置文件中，例如 appsetti" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-75747.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="Blazor 在开发环境保存机密（User Secrets）" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/f7ca9e5027b0ed2dc93a81c48c255db2.webp" />
+        <meta property="og:release_date" content="2025-03-17T09:41:08" />
+    <meta property="og:updated_time" content="2025-03-17T09:41:08" />
+        <meta property="og:description" content="前言 在应用程序开发的过程中，有的时候需要在代码中保存一些机密的信息，比如微信appkey, 连接字符串,加密密钥，字符串，或者是用户名密码等。通常的做法是保存到一个配置文件中，例如 appsetti" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Blazor 在开发环境保存机密（User Secrets）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="logo">
+                        <span>V2ray Clash Free</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Blazor 在开发环境保存机密（User Secrets）</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="前言">前言</h2> <p>在应用程序开发的过程中，有的时候需要在代码中保存一些机密的信息，比如微信appkey, 连接字符串,加密密钥，字符串，或者是用户名密码等。通常的做法是保存到一个配置文件中，例如 appsettings.json, 以之前文章"Blazor组件自做五: 使用JS隔离封装Google地图" 为例 ,其中有一段代码</p> <pre><code>@inject IConfiguration config  [Parameter] public string? Key { get; set; }  key = Key ?? config["GoogleKey"];</code></pre> <p>意思是在 IConfiguration 服务获取 "GoogleKey" , 默认在 appsettings.json 文件配置. 问题就来了,如果我们在工程的 appsettings.json 文件明文保存 GoogleKey , 多人开发或者开源同步到Github/码云上,那肯定是极其不安全的.</p> <p>严重建议勿在源代码中存储密码或其他敏感数据。 也不要将生产机密用于开发或测试。 机密不随应用一起部署。</p> <h2 id="用户机密介绍">用户机密介绍</h2> <p>使用用户机密的场景：</p> <p>需要保存一些和第三方网站对接的密钥，比如和 微信，微博站点使用的 appkey<br /> 给每个开发人员配置不用的用户名密码来访问一些资源<br /> 开发人员在开发过程中使用各自本机的数据库，如何配置数据库地址、账号和密码<br /> 假设说最后一项，每个开发要使用自己本机的数据库，你可能会说让每个人修改自己的appsettings.config，在提交代码的时候不提交就行了。那么如果在appsettings.config添加其他配置项的时候，显然不提交appsettings.config文件不合理的。</p> <p>现在，ASP.NET Core 提供了一种很优雅简洁的方式 User Secrets 用来帮助我们解决这个事情。</p> <h2 id="机密管理器">机密管理器</h2> <p>机密管理器工具存储 ASP.NET Core 项目开发期间的敏感数据。 在此上下文中，一段敏感数据是应用机密。 应用机密存储在与项目树不同的位置。 应用机密与特定项目关联，或者跨多个项目共享。 应用机密不会签入到源代码管理中。</p> <h2 id="机密管理器工具的工作原理">机密管理器工具的工作原理</h2> <p>机密管理器工具会隐藏实现详细信息，例如值的存储位置和存储方法。 可在不知道这些实现详细信息的情况下使用该工具。 这些值存储在本地计算机的用户配置文件文件夹中的 JSON 文件中：</p> <p>Windows文件系统路径：</p> <p><code>%APPDATA%\Microsoft\UserSecrets\&lt;user_secrets_id&gt;\secrets.json</code></p> <p>Linux/macOS 文件系统路径：</p> <p><code>~/.microsoft/usersecrets/&lt;user_secrets_id&gt;/secrets.json</code></p> <p>在上述文件路径中，将 &lt;user_secrets_id&gt; 替换为在项目文件中指定的 UserSecretsId 值。</p> <p>不要编写依赖于使用机密管理器工具保存的数据的位置或格式的代码。 这些实现详细信息可能有变。 例如，机密值不会加密，但将来可能会加密。</p> <h2 id="启用机密存储">启用机密存储</h2> <p>在 Visual Studio 2022 中，在解决方案资源管理器中右键单击该项目，然后从上下文菜单中选择“管理用户机密”。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/944b52556a57af93d67ad69ef56252fe.jpg" alt="Blazor 在开发环境保存机密（User Secrets）"></p> <p>该操作会将 UserSecretsId 元素添加到项目文件的 PropertyGroup 中。 默认情况下，UserSecretsId 的内部文本是 GUID。 内部文本是任意的，但对于项目来说是唯一的。</p> <pre><code>&lt;PropertyGroup&gt;   &lt;UserSecretsId&gt;79a3edd0-2092-40a2-a04d-dcb46d5ca9ed&lt;/UserSecretsId&gt; &lt;/PropertyGroup&gt;</code></pre> <h2 id="在应用程序中使用用户机密">在应用程序中使用用户机密</h2> <p>要在应用程序中访问配置的用户机密，你需要保证project.json文件中存在依赖项：</p> <p>Microsoft.Extensions.Configuration.UserSecrets 并且builder.AddUserSecrets()。</p> <p>然后在Startup.cs文件中通过 Configuration 对象访问</p> <pre><code>var builder = WebApplication.CreateBuilder(args); var movieApiKey = builder.Configuration["ApiKey"];</code></pre> <h2 id="实际操作">实际操作</h2> <h3 id="1-新建工程n01usersecrets-将项目添加到解决方案中">1. 新建工程n01UserSecrets. 将项目添加到解决方案中</h3> <pre><code>dotnet new blazorserver -o n01UserSecrets dotnet sln add n01UserSecrets/n01UserSecrets.csproj</code></pre> <h3 id="2-在解决方案资源管理器中右键单击n01usersecrets项目然后从上下文菜单中选择管理用户机密">2. 在解决方案资源管理器中右键单击<code>n01UserSecrets</code>项目，然后从上下文菜单中选择“管理用户机密”。</h3> <p>打开的文件内容替换为</p> <pre><code>{    "ApiKey": "12345"  }</code></pre> <h3 id="3-programcs-文件使用">3. Program.cs 文件使用</h3> <pre><code>var movieApiKey = builder.Configuration["ApiKey"]; Console.WriteLine(movieApiKey);</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b4edb9904cda65d64fae8cf78bff3ee7.jpg" alt="Blazor 在开发环境保存机密（User Secrets）"></p> <h3 id="4-razor-页面使用">4. Razor 页面使用</h3> <pre><code>Key is @apiKey  @code{     [Inject] IConfiguration? config { get; set; }      string? apiKey { get =&gt; config!["ApiKey"]; }  }</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/274876164e52a35553573e471f947c04.jpg" alt="Blazor 在开发环境保存机密（User Secrets）"></p> <h3 id="5-不同项目共享机密存储文件">5. 不同项目共享机密存储文件</h3> <p>以控制台为例</p> <pre><code>dotnet new console -o n01UserSecretsConsole dotnet sln add n01UserSecretsConsole/n01UserSecretsConsole.csproj</code></pre> <h4 id="51-在解决方案资源管理器中右键单击n01usersecretsconsole项目然后从上下文菜单中选择管理用户机密">5.1. 在解决方案资源管理器中右键单击<code>n01UserSecretsConsole</code>项目，然后从上下文菜单中选择“管理用户机密”。</h4> <h4 id="52-双击项目n01usersecrets打开项目配置找到usersecretsid一行整行复制">5.2. 双击项目<code>n01UserSecrets</code>,打开项目配置,找到UserSecretsId一行,整行复制</h4> <pre><code>&lt;UserSecretsId&gt;979b4b67-add4-46bb-80c6-49dab268ca91&lt;/UserSecretsId&gt;</code></pre> <h4 id="53-在解决方案资源管理器中右键单击n01usersecretsconsole项目然后从上下文菜单中选择管理用户机密">5.3. 在解决方案资源管理器中右键单击<code>n01UserSecretsConsole</code>项目，然后从上下文菜单中选择“管理用户机密”。</h4> <h4 id="54-双击项目n01usersecretsconsole找到usersecretsid一行替换为复制的内容">5.4. 双击项目<code>n01UserSecretsConsole</code>,找到UserSecretsId一行,替换为复制的内容</h4> <pre><code>&lt;UserSecretsId&gt;979b4b67-add4-46bb-80c6-49dab268ca91&lt;/UserSecretsId&gt;</code></pre> <h4 id="55-programcs-文件测试效果">5.5. Program.cs 文件测试效果</h4> <pre><code>using Microsoft.Extensions.Configuration;   IConfiguration? Config;  Config = new ConfigurationBuilder().AddUserSecrets&lt;Program&gt;().Build(); var apiKey = Config["ApiKey"]; Console.WriteLine(apiKey);</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7629db488d3df09ea55730edca6490d6.jpg" alt="Blazor 在开发环境保存机密（User Secrets）"></p> <h2 id="net-cli">.NET CLI</h2> <ul> <li>启用机密存储</li> </ul> <pre><code>dotnet user-secrets init</code></pre> <ul> <li>设置机密</li> </ul> <pre><code>dotnet user-secrets set "Movies:ServiceApiKey" "12345"</code></pre> <p>在上述示例中，冒号表示 Movies 是具有 ServiceApiKey 属性的对象文字。</p> <ul> <li>列出机密</li> </ul> <pre><code>dotnet user-secrets list</code></pre> <ul> <li>删除单个机密</li> </ul> <pre><code>dotnet user-secrets remove "Movies:ConnectionString"</code></pre> <ul> <li>删除所有机密</li> </ul> <pre><code>dotnet user-secrets clear</code></pre> <h2 id="优先级">优先级</h2> <p>注意：如果你的appsetting.json文件中有和secrets.json文件中相同节点（冲突）的配置项，那么就会被secrets.json中的设置项给覆盖掉，因为 builder.AddUserSecrets()晚于 AddJsonFile("appsettings.json")注册, 那么我们可以利用这个特性来在每个开发人员的机器上重新设置数据库连接字符串了。</p> <h2 id="总结">总结</h2> <p>以上，或许可以感受到微软在 ASP.NET Core 中对于开发人员还是非常贴心的，很多小细节都考虑到了，因此在我们构建应用程序的过程中，可以多使用这些小功能（特性）来让我们的代码更加的优雅～</p> <h2 id="参考资料">参考资料</h2> <ul> <li> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.microsoft.com/zh-cn/aspnet/core/security/app-secrets?view=aspnetcore-6.0&amp;tabs=windows"  target="_blank" rel="nofollow">使用 ASP.NET Core 安全地存储开发中的应用机密</a></p> </li> <li> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.cnblogs.com/savorboard/p/dotnetcore-user-secrets.html"  target="_blank" rel="nofollow">ASP.NET Core 优雅的在开发环境保存机密</a></p> </li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-75051.htm">山东聊城宠物医院排名（聊城宠物公司）</a></p>
+                                        <p>下一个：<a href="/news/article-75748.htm">动物疫苗使用方法（动物疫苗接种方法）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-40596.htm" title="在vue项目中如何获取视频的时长_vue.js_">在vue项目中如何获取视频的时长_vue.js_</a></li>
+                        <li class="py-2"><a href="/news/article-54838.htm" title="动物疫苗注射的作用机制是什么意思（动物接种疫苗的好处）">动物疫苗注射的作用机制是什么意思（动物接种疫苗的好处）</a></li>
+                        <li class="py-2"><a href="/news/article-69740.htm" title="动物打防疫针多少钱一针疫苗（动物打预防针多少钱）">动物打防疫针多少钱一针疫苗（动物打预防针多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-clash-windows.htm" title="「2月10日」最高速度22.8M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费手机节点订阅链接">「2月10日」最高速度22.8M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-73044.htm" title="宠物领养哪个平台好（哪个平台可以领养宠物）">宠物领养哪个平台好（哪个平台可以领养宠物）</a></li>
+                        <li class="py-2"><a href="/news/article-35474.htm" title="动物疫苗生产厂家排名前十名有哪些呢图片（动物疫苗生产厂家排名前十名有哪些呢图片大全）">动物疫苗生产厂家排名前十名有哪些呢图片（动物疫苗生产厂家排名前十名有哪些呢图片大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-clash-windows.htm" title="「3月5日」最高速度18.2M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接">「3月5日」最高速度18.2M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-49526.htm" title="Java高级之LinkedList的ListIterator迭代器">Java高级之LinkedList的ListIterator迭代器</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-clash-v2ray-ss-ssr.htm" title="「1月6日」最高速度22.4M/S，2025年V2ray/Shadowrocket/Clash/SSR每天更新免费手机节点订阅链接">「1月6日」最高速度22.4M/S，2025年V2ray/Shadowrocket/Clash/SSR每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-70395.htm" title="中国10大兽药厂（中国10大兽药厂家排名）">中国10大兽药厂（中国10大兽药厂家排名）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
