@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-83338.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MyBatis 及 MyBatis Plus 纯注解方式配置(Spring Boot + Postgresql) &#8211; Milton</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="当前的版本为  MyBatis 3.5.9 MyBatis Plus 3.5.1 Spring Boot 2.6.4 Postgresql 42.3.3   以下说明Spring Boot下完全以注解" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-83338.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="MyBatis 及 MyBatis Plus 纯注解方式配置(Spring Boot + Postgresql) &#8211; Milton" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/f7ca9e5027b0ed2dc93a81c48c255db2.webp" />
+        <meta property="og:release_date" content="2025-03-28T09:55:40" />
+    <meta property="og:updated_time" content="2025-03-28T09:55:40" />
+        <meta property="og:description" content="当前的版本为  MyBatis 3.5.9 MyBatis Plus 3.5.1 Spring Boot 2.6.4 Postgresql 42.3.3   以下说明Spring Boot下完全以注解" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MyBatis 及 MyBatis Plus 纯注解方式配置(Spring Boot + Postgresql) &#8211; Milton">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="logo">
+                        <span>V2ray Clash Free</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>MyBatis 及 MyBatis Plus 纯注解方式配置(Spring Boot + Postgresql) &#8211; Milton</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				</h1> <p>当前的版本为</p> <ul> <li>MyBatis 3.5.9</li> <li>MyBatis Plus 3.5.1</li> <li>Spring Boot 2.6.4</li> <li>Postgresql 42.3.3</li> </ul> </h1> <p>以下说明Spring Boot下完全以注解方式进行的配置, 覆盖大部分功能场景</p> <h2 id="项目依赖">项目依赖</h2> <p>需要以下的依赖, 版本由Spring Boot指定, 或者参考上面的版本号</p> <pre><code class="language-xml">&lt;dependency&gt;     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;     &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt;     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;     &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt;     &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;     &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt;     &lt;groupId&gt;org.postgresql&lt;/groupId&gt;     &lt;artifactId&gt;postgresql&lt;/artifactId&gt; &lt;/dependency&gt;</code></pre> <h2 id="配置">配置</h2> <h3 id="1增加-mapperscan-注解">1.增加 MapperScan 注解</h3> <p>这个注解可以和@SpringBootApplication放在一起, 也可以放在单独的一个 @Configuration</p> <pre><code class="language-java">@SpringBootApplication @MapperScan(basePackages = "com.yourdomain.demo.commons.impl.mapper") public class CommonsBoot {     public static void main(String[] args) {         SpringApplication.run(CommonsBoot.class, args);     } }</code></pre> <h3 id="2-准备pojopo或者dto">2. 准备POJO(PO或者DTO)</h3> <pre><code class="language-java">public class RoleItemDTO {     private Integer id;     private int roleId;     private int itemId;     private Date createTime;      // getters and setters     // ... }</code></pre> <h3 id="3-准备mapper">3. 准备Mapper</h3> <p>Mapper必须位于 @MapperScan 指定的包路径, 其中 @Repository 用于指定 Bean 名称, 也可以使用 @Mapper 注解. 内部用 @Select @Update @Delete @Insert 等编写对应操作的SQL</p> <pre><code class="language-java">@Repository("roleItemMapper") public interface RoleItemMapper {      @Select("SELECT * FROM test_role_item WHERE role_id = #{roleId}")     List&lt;RoleItemDTO&gt; listByRoleId(@Param("roleId") int roleId); }</code></pre> <h3 id="4-调用">4. 调用</h3> <p>测试用例</p> <pre><code class="language-java">@ExtendWith(SpringExtension.class) @SpringBootTest @TestMethodOrder(MethodOrderer.OrderAnnotation.class) public class RoleItemTest {     private static final Logger log = LoggerFactory.getLogger(RoleItemTest.class);      @Resource     private RoleItemMapper roleItemMapper;      @Test     @Order(1)     void insert() {         RoleItemDTO rc = new RoleItemDTO();         rc.setItemId(1);         rc.setRoleId(2);         rc.setCreateTime(new Date());         Assertions.assertThat(roleItemMapper.insert(rc)).isEqualTo(1);         List&lt;RoleItemDTO&gt; dummies = roleItemMapper.listByRoleId(2);         log.info(JacksonUtil.compress(dummies));         Assertions.assertThat(dummies).isNotNull();      } }</code></pre> <h2 id="注解使用">注解使用</h2> <h3 id="典型用例">典型用例</h3> <pre><code class="language-java">public interface VillageMapper {     @Results({         @Result(property = "vid",         column = "id"),         @Result(property = "villageName", column = "name"),         @Result(property = "district",    column = "district")     })     @Select("SELECT id, name, district from village WHERE id = #{id}")     Village selectVillage(int id);      @Insert("INSERT into village(name,district) VALUES(#{villageName}, #{district})")     void insertVillage(Village village);      @Update("UPDATE village SET name=#{villageName}, district =#{district} WHERE id =#{vid}")     void updateVillage(Village village);      @Delete("DELETE FROM village WHERE id =#{id}")     void deleteVillage(int id); }</code></pre> <h3 id="传参注解param和">传参注解<code>@Param</code>和<code>${}</code>,<code>#{}</code></h3> <p>在Mapper接口中, 使用<code>@Param("paramName")</code>可以对传入的参数进行命名, 在SQL中通过<code>${paramName}</code>和<code>#{paramName}</code>取值, 避免歧义.</p> <ol> <li><code>${}</code>会在SQL字符串中直接替换, 非必要不建议使用这种方式</li> <li><code>#{}</code>是根据参数类型进行填充, 对于字符串会增加引号包围, 是通常使用的传参方式</li> <li><code>#{}</code>支持对象传入, 在引用时通过<code>#{obj.variable}</code>的方式取值, 参考下面 Insert 的例子</li> </ol> <h3 id="select和结果集映射">Select和结果集映射</h3> <p>对于普通类型例如primitive类型, 数值(Integer, Long, Double, BigDecimal等), 字符串String, 日期Date, MyBatis都已经做了自动转换不需要手工设定. 对于特殊类型, 例如对应Postgresql的 Array, Jsonb, 需要使用注解 @Results 进行指定, 在注解中, 对于已经有默认handler的字段可以省略, 只需要添加特殊指定hanler的字段.</p> <p>Array类型字段的例子, 对templates字段的转换进行指定</p> <pre><code class="language-java">// POJO定义 public class ViewPO implements Serializable {     private Integer id;     private String name;     private Integer[] templates; }  // Mapper方法 @Results({     @Result(property = "templates", column = "template_ids", typeHandler = ArrayTypeHandler.class) }) @Select("select * from test_view where id = #{id}") ViewPO select(@Param("id") int id);</code></pre> <p>JSONB类型字段的例子, 对ext字段的转换进行指定</p> <pre><code class="language-java">// POJO定义 public class AccountDTO {     private Long id;     private String name;     private int val;     private BigDecimal amount;     private Ext ext;      public static class Ext {         private Integer id;         private String name;         private BigDecimal level;         // getters and setters     }      // getters and setters }  // Mapper方法 @Results({     @Result(property = "ext", column = "ext", typeHandler = JacksonTypeHandler.class) }) @Select("select * from test_account where amount &gt; #{amountGt}") List&lt;AccountDTO&gt; list(@Param("amountGt") BigDecimal amountGt);</code></pre> <h3 id="分页和排序">分页和排序</h3> <p>MyBatis 并没有提供内建的分页和排序支持, 可以通过自定义一个Pager实现, 最底下<code>getSql()</code>方法生成的SQL格式是给PostgreSQL使用的, 如果用 MySQL 需要自己修改一下.</p> <pre><code class="language-java">public class Pager implements Serializable {     public static final Pager DEFAULT = new Pager();      private static final int UNLIMITED = 0;      private int offset = 0;     private int limit = UNLIMITED;     private final List&lt;Sort&gt; sorts = new ArrayList&lt;&gt;();      public Pager() {}      public Pager(int limit) {         this.limit = limit;     }      public Pager(int offset, int limit) {         this.offset = offset;         this.limit = limit;     }      public Pager orderByAsc(String field) {         sorts.add(new Sort(field, Order.ASC));         return this;     }      public Pager orderByDesc(String field) {         sorts.add(new Sort(field, Order.DESC));         return this;     }      public enum Order {         /** */         ASC, DESC     }      public static class Sort {         public String field;         public Order order;          public Sort(String field, Order order) {             this.field = field;             this.order = order;         }     }      public String getSql() {         StringBuilder sb = new StringBuilder();         if (sorts.size() &gt; 0) {             for (Sort sort : sorts) {                 sb.append((sb.length() == 0)? "ORDER BY " : ", ")                         .append(sort.field).append(' ').append(sort.order);             }         }         if (limit &gt; UNLIMITED) {             sb.append(" LIMIT ").append(limit).append(" OFFSET ").append(offset);         }         return sb.toString();     } }</code></pre> <p>在使用时, 注解中使用<code>${}</code> 引用, 注意:如果使用了<code>&lt;if&gt;</code>判断, 前后要加上<code>&lt;script&gt;</code></p> <pre><code class="language-java">String PARAMS = "&lt;if test='param != null'&gt;" +             "&lt;if test='param.itemType != null'&gt;AND item_type = #{param.itemType}&lt;/if&gt;" +             "&lt;if test='param.itemName != null'&gt;AND item_name = #{param.itemName}&lt;/if&gt;" +             "&lt;/if&gt;";  @Select("&lt;script&gt;SELECT item_type, item_name, create_time" +         " FROM ${tableName} &lt;where&gt;" + PARAMS + "&lt;/where&gt;" +         " &lt;if test='pager != null'&gt;${pager.sql}&lt;/if&gt;" +         "&lt;/script&gt;") List&lt;Item&gt; list(         @Param("tableName") String tableName,         @Param("param") Map&lt;String, Object&gt; param,         @Param("pager") Pager pager);</code></pre> <p>调用时, 如果不排序分页就直接给 null, 如果排序分页, 就带上参数.</p> <pre><code class="language-java">Pager pager = new Pager(10, 20).orderByAsc("item_name").orderByAsc("item_type"); list = itemMapper.list(TBL_NAME, map, pager);</code></pre> <h3 id="insert和自增主键">Insert和自增主键</h3> <pre><code class="language-java">@Insert("INSERT INTO role_item (role_id, item_id, create_time) VALUES (#{po.roleId}, #{po.itemId}, #{po.createTime})") @Options(useGeneratedKeys=true, keyProperty="id") int insert(@Param("po") RoleItemPO po);</code></pre> <h3 id="delete">Delete</h3> <pre><code class="language-java">@Delete("DELETE FROM role_item WHERE item_id = #{itemId}") int deleteByItemId(@Param("itemId") int itemId);</code></pre> <h3 id="update">Update</h3> <pre><code class="language-java">@Update("update widget set name=#{po.name}, manufacturer=#{po.manufacturer} where id=#{id}") public void updateById(@Param("id") int id, @Param("po") Widget po);</code></pre> <h3 id="在注解内使用-foreach-if-test-等标签">在注解内使用 foreach, if test 等标签</h3> <p>如果使用复杂标签, 需要加上<code>&lt;script&gt;</code> 包围</p> <pre><code class="language-java">@Mapper public interface LizzMapper {     @Select({"&lt;script&gt; select id,name " +             " from t_lizz" +             " where id in" +             " &lt;foreach collection=\"ids\" index=\"index\" item=\"item\" open=\"(\" separator=\",\" close=\")\"&gt;" +             "        #{item}" +             " &lt;/foreach&gt;" +             "&lt;/script&gt;"})     List&lt;Lizz&gt; selectByIds(List&lt;Integer&gt; ids);       @Insert({"&lt;script&gt; insert into t_lizz(id,name)" +             " values" +             " &lt;foreach collection=\"datas\" item=\"item\" separator=\",\" &gt;(#{item.id},#{item.name})&lt;/foreach&gt;" +             "&lt;/script&gt;"})     int batchInsert(List&lt;Lizz&gt; datas);       @Select({"&lt;script&gt; select id,name " +             " from t_lizz" +             " where id in" +             " &lt;foreach collection=\"ids.split(',')\" index=\"index\" item=\"item\" open=\"(\" separator=\",\" close=\")\"&gt;#{item}&lt;/foreach&gt;" +             "&lt;if test='state != null'&gt;and state= #{state}&lt;/if&gt; " +             "&lt;/script&gt;"})     List&lt;AlertRule&gt; listByIdsAndState(String ids, Integer state); }</code></pre> </h1> <p>MyBatis Plus 相对于原生 MyBatis, 增加了对常用CRUD方法的包装, 减小了手工编写SQL的工作量. MyBatis Plus 对多主键的表支持不太好, 如果数据库中的某个数据表使用了联合主键, 建议使用原生的 MyBatis 注解对这个数据表进行操作</p> <h2 id="项目依赖-1">项目依赖</h2> <p>将 MyBatis 的依赖替换为MyBatis Plus, 参考上面的版本号, 本文使用的是3.5.1</p> <pre><code>&lt;dependency&gt;     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;     &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt;     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;     &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt;     &lt;groupId&gt;com.baomidou&lt;/groupId&gt;     &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt;     &lt;groupId&gt;org.postgresql&lt;/groupId&gt;     &lt;artifactId&gt;postgresql&lt;/artifactId&gt; &lt;/dependency&gt;</code></pre> <h2 id="配置-1">配置</h2> <h3 id="1增加-mybatisplus-的配置类">1.增加 MyBatisPlus 的配置类</h3> <p>因为除了设置 MapperScan, 还要设置分页插件, 因此放到了单独的 @Configuration</p> <pre><code class="language-java">@Configuration @MapperScan(basePackages = "com.yourdomain.demo.common.mapper") public class MybatisPlusConfig {      @Bean     public MybatisPlusInterceptor mybatisPlusInterceptor() {         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.POSTGRE_SQL));         return interceptor;     }  }</code></pre> <h3 id="2-准备pojopo或者dto-1">2. 准备POJO(PO或者DTO)</h3> <p>如果使用 MyBatis Plus, 常用的三个注解为</p> <ol> <li>@TableName 表名, autoResultMap设置为true, 下面 ext 字段的 typeHandler 才会生效</li> <li>@TableId 唯一主键, 这个注解在当前类中只允许出现一次. 唯一主键修饰的id字段需要使用包装类, 例如 Integer或Long, 在Insert时这个字段赋值NULL, 才能正确获取生成的自增ID值</li> <li>@TableField 字段映射关系, 当字段名与变量名不能直接对应时使用, 当类型转换需要特殊处理时也需要使用这个注解</li> </ol> <pre><code class="language-java">@TableName(value = "test_users", autoResultMap = true) public class UserPO implements Serializable {     @TableId(value = "id", type = IdType.AUTO)     private Long id;     private String userName;     private String password;     @TableField("creat_time")     private Date createdAt;     @TableField("update_time")     private Date updatedAt;     @TableField(typeHandler = JacksonTypeHandler.class)     private JsonNode ext; }</code></pre> <h3 id="3-准备-mapper">3. 准备 Mapper</h3> <p>对于 MyBatis Plus, 最常见的 Mapper 初始化方式为扩展 BaseMapper, 这个接口已经实现了 selectById, selectList, insert, delete, deleteById, updateById 等常用方法</p> <pre><code class="language-java">@Repository("userMapper") public interface UserMapper extends BaseMapper&lt;UserPO&gt; {  }</code></pre> <p>注意</p> <ol> <li>如果 BaseMapper 自带方法不能满足功能需求, 可以通过 @Select, @Update, @Insert, @Delete 等注解添加自定义接口, 实际上就是按原生 MyBatis 的方式处理.</li> <li>如果添加了 @Select 查询并且结果也是标准POJO, 结果中的 JSONB 类型字段并不会自动赋值(输出为null). 如果需要转换, 需要按原生 MyBatis 一样在方法上添加 @Results 注解.</li> </ol> <h3 id="4-调用-1">4. 调用</h3> <p>调用方式与原生 MyBatis 一致</p> <h2 id="注解使用-1">注解使用</h2> <p>MyBatis Plus 的常用注解主要有两个, 一个是 Wrapper(有多个实现类), 一个是 Page, 分别用于查询条件和分页条件.</p> <h3 id="querywrapper-用于条件排序和聚合">QueryWrapper 用于条件,排序和聚合</h3> <p>QueryWrapper 自带了常用的逻辑方法 eq(相等), ne(不相等), lt/gt(小于/大于), lte/gte(小于等于/大于等于), like(两边%), likeLeft(左%), likeRiht(右%), exists(条件子查询), in(数组中包含), 以及 groupBy, orderBy 方法</p> <ol> <li>三参数格式中, 第一个参数为本条件是否加入查询的条件判断, 便于根据输入进行条件组合</li> <li>三参数的第二参数(或二参数的第一参数), 其值为数据库的字段名, 这点与 LambdaQueryWrapper 不同, 需要注意</li> </ol> <pre><code class="language-java">List&lt;FieldPO&gt; fields = fieldMapper.selectList(new QueryWrapper&lt;FieldPO&gt;().eq("t_id", tId).orderByAsc("id"));</code></pre> <p>一个复杂一点的例子, 注意最后一个exists例子中的传参方式</p> <pre><code class="language-java">QueryWrapper&lt;ItemPO&gt; wrapper = new QueryWrapper&lt;ItemPO&gt;()     .eq(name != null, "item_name", name)     .like(nameLike != null, "item_name", nameLike)     .like(descLike != null, "desc", descLike)     .eq(type &gt; 0, "item_type", type)     .eq(state &gt; 0, "item_state", state)     .eq(creatorId &gt; 0, "creator_id", creatorId)     .in(idIn != null &amp;&amp; idIn.size() &gt; 0, "id", idIn)     .exists(roleId &gt; 0, "select 1 from role_item where role_item.item_id=item.id and role_item.role_id = {0}", roleId);</code></pre> <h3 id="lambdaquerywrapper-pojo字段方式">LambdaQueryWrapper POJO字段方式</h3> <p>LambdaQueryWrapper 与 QueryWrapper 的区别在与条件参数为POJO的取值方法名而不是数据库字段, 从设计上看这样可以完全隔离数据库层的信息, 是更好的一种实现, 例子</p> <pre><code class="language-java">LambdaQueryWrapper&lt;AccountDTO&gt; userLambdaQueryWrapper = new LambdaQueryWrapper&lt;&gt;();     userLambdaQueryWrapper.likeRight(AccountDTO::getName , "acc").lt(AccountDTO::getVal , 40).last("limit 5");</code></pre> <p>但是当前 MyBatis Plus 的实现在高版本JDK上会提示警告, 在 JDK9+ 上运行时会提示<code>An illegal reflective access operation has occurred</code><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/baomidou/mybatis-plus/issues/3900"  target="_blank" rel="nofollow">#issue</a>. 建议还是继续用 QueryWrapper, 待这部分的实现修复后再迁移.</p> <h3 id="page-分页">Page 分页</h3> <p>列表的排序和聚合都是通过Wrapper指定的, Page 用于列表中的分页. 前提: 在 Configuration 中, 通过 MybatisPlusInterceptor 添加 PaginationInnerInterceptor, 参考前面的配置部分, 需要配置正确的 DbType.</p> <p>通过页数和每页记录数创建Page对象</p> <pre><code class="language-java">Page page = new Page&lt;&gt;(vo.getPageNum(), vo.getPageSize());</code></pre> <p>结合Wrapper进行查询</p> <pre><code class="language-java">@Override public List&lt;ItemPO&gt; listByArgs(         Page&lt;ItemPO&gt; page,         String name,         int type) {     QueryWrapper&lt;ItemPO&gt; wrapper = new QueryWrapper&lt;ItemPO&gt;()             .eq(name != null, "item_name", name)             .eq(type &gt; 0, "item_type", type);     return itemMapper.selectPage(page, wrapper).getRecords(); }</code></pre> <p>如果需要总数, 可以直接返回<code>selectPage(page, wrapper)</code>的结果.</p> <h2 id="混合使用-mybatis-原生方式和-mybatis-plus">混合使用 MyBatis 原生方式和 MyBatis Plus</h2> <p>因为 MyBatis Plus 是对 MyBatis 功能的包装, 底层依然是 MyBatis, 所以在使用 MyBatis Plus 的过程中, MyBatis 的原生方法依然可用.</p> <p>例如, 可以在原生方法中, 使用 MyBatis Plus 的 Wrapper</p> <pre><code class="language-java">@Repository("userMapper") public interface UserMapper extends BaseMapper&lt;UserPO&gt; {      @Select("select * from u_users ${ew.customSqlSegment}")     List&lt;UserPO&gt; selectAll(@Param(Constants.WRAPPER) Wrapper&lt;UserPO&gt; wrapper); }</code></pre> </h1> <h2 id="批量执行">批量执行</h2> <p>批量执行可以通过两种方式,</p> <h3 id="mybatis-原生环境">MyBatis 原生环境</h3> <p>在 MyBatis 原生环境下, 可以通过获取 sqlSession 后手工发起</p> <pre><code class="language-java">@Resource(name = "sqlSessionFactory") private SqlSessionFactory sqlSessionFactory;  public void addItems(List&lt;ItemPO&gt; items) {     SqlSession session = sqlSessionFactory.openSession(ExecutorType.BATCH, false);     try {         for (ItemPO item : items) {             itemMapper.insert(item);         }         session.commit();         session.clearCache();     } catch (Exception e) {         log.error("Exception in batch update", e);         session.rollback();     } finally {         session.close();     } }</code></pre> <h3 id="mybatis-plus-的-savebatch">MyBatis Plus 的 saveBatch</h3> <p>在 MyBatis Plus 中, 可以通过扩展 ServiceImpl&lt;Mapper, POJO&gt; 类, 直接使用其中的 saveBatch() 方法</p> <pre><code class="language-java">public class FieldServiceImpl         extends ServiceImpl&lt;FieldMapper, FieldPO&gt;         implements FieldService {      @Override     public Result saveSomething(List&lt;FieldPO&gt; pos) {         // 在方法中使用 saveBatch         saveBatch(pos);     } }</code></pre> <h2 id="动态表名">动态表名</h2> <p>如果需要在查询中指定表名, 最简单的方式是通过<code>${}</code>方式传参, 例子如下</p> <pre><code class="language-java">@Select("SELECT * FROM ${tableName} WHERE item_type=#{itemType} " +         "AND item_name=#{itemName} AND item_id=#{itemId} AND label=#{label}") LabelMapDTO selectFromTable(         @Param("tableName") String tableName,         @Param("itemType") int itemType,         @Param("itemName") String itemName,         @Param("itemId") String itemId,         @Param("label") String label);  @Select("SELECT * FROM ${tableName} WHERE item_type=#{itemType} " +         "AND item_name=#{itemName} AND item_id=#{itemId}") List&lt;LabelMapDTO&gt; selectListFromTable(         @Param("tableName") String tableName,         @Param("itemType") int itemType,         @Param("itemName") String itemName,         @Param("itemId") String itemId);</code></pre> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-82635.htm">宠物领养什么意思啊英文怎么说呢（宠物领养等于送吗）</a></p>
+                                        <p>下一个：<a href="/news/article-83339.htm">宠物医院办理诊疗许可证需要什么材料（宠物医院证件办理流程）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-37146.htm" title="动物医院价目表牌子 动物医院价目表牌子图片大全">动物医院价目表牌子 动物医院价目表牌子图片大全</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-node-subscribe-links.htm" title="「3月22日」最高速度20.6M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接">「3月22日」最高速度20.6M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-75051.htm" title="山东聊城宠物医院排名（聊城宠物公司）">山东聊城宠物医院排名（聊城宠物公司）</a></li>
+                        <li class="py-2"><a href="/news/article-39123.htm" title="@DateTimeFormat 注解 和 @JsonFormat 注解">@DateTimeFormat 注解 和 @JsonFormat 注解</a></li>
+                        <li class="py-2"><a href="/news/article-48398.htm" title="宠物领养app设计 宠物领养APP设计思路">宠物领养app设计 宠物领养APP设计思路</a></li>
+                        <li class="py-2"><a href="/news/article-78471.htm" title="win11系统共享文件夹打不开如何解决">win11系统共享文件夹打不开如何解决</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-node-share-links.htm" title="「2月6日」最高速度20.6M/S，2025年V2ray/Clash/Shadowrocket/SSR每天更新免费手机节点订阅链接">「2月6日」最高速度20.6M/S，2025年V2ray/Clash/Shadowrocket/SSR每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-44569.htm" title="spring boot+maven项目打包成war包部署到tomcat【局域网内访问】">spring boot+maven项目打包成war包部署到tomcat【局域网内访问】</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-free-node-subscribe-links.htm" title="「3月17日」最高速度19.4M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费手机节点订阅链接">「3月17日」最高速度19.4M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-51060.htm" title="教你用jquery实现网页的楼梯效果">教你用jquery实现网页的楼梯效果</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
