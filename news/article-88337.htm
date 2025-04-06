@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-88337.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Java数据结构之单向环形链表（解决Josephu约瑟夫环问题）</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="1.Josephu（约瑟夫、约瑟夫环）问题： 设编号为1，2，… n的n个人围坐一圈，约定编号为k（1&lt;=k&lt;=n）的人从1开始报数，数到m 的那个人出列，它的下一位又从1开始报数，数到m" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-88337.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="Java数据结构之单向环形链表（解决Josephu约瑟夫环问题）" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/748f9791931953a2542a59435deb7dc9.webp" />
+        <meta property="og:release_date" content="2025-04-04T09:09:54" />
+    <meta property="og:updated_time" content="2025-04-04T09:09:54" />
+        <meta property="og:description" content="1.Josephu（约瑟夫、约瑟夫环）问题： 设编号为1，2，… n的n个人围坐一圈，约定编号为k（1&lt;=k&lt;=n）的人从1开始报数，数到m 的那个人出列，它的下一位又从1开始报数，数到m" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java数据结构之单向环形链表（解决Josephu约瑟夫环问题）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="logo">
+                        <span>V2ray Clash Free</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Java数据结构之单向环形链表（解决Josephu约瑟夫环问题）</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body"> <p><strong>1.Josephu（约瑟夫、约瑟夫环）问题：</strong></p> <p>设编号为1，2，… n的n个人围坐一圈，约定编号为k（1&lt;=k&lt;=n）的人从1开始报数，数到m 的那个人出列，它的下一位又从1开始报数，数到m的那个人又出列，依次类推，直到所有人出列为止，由此产生一个出队编号的序列。</p> <p><strong>提示：</strong></p> <p>用一个不带头结点的循环链表来处理Josephu 问题：先构成一个有n个结点的单循环链表，然后由k结点起从1开始计数，计到m时，对应结点从链表中删除，然后再从被删除结点的下一个结点又从1开始计数，直到最后一个结点从链表中删除算法结束。</p> <p>2.单向环形链表示意图</p> <p><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads/20230108/50cd9f19dce07f7b683a1ba51a65ad87.jpg"></p> <p>3.约瑟夫问题的示意图</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="482" src="http://img.555519.xyz/uploads/20230108/11d8f31c72fa699574d637c4207e21b2.jpg"></p> <p>4.创建环形链表的思路</p> <p><img decoding="async" alt="" class="has" height="214" src="http://img.555519.xyz/uploads/20230108/e6f7c54e56eea936fdcc1273ba2e9dc9.jpg"></p> <p>1）构建一个单向的环形链表思路</p> <ul> <li>先创建第一个节点，让first指向该节点，并形成环形</li> <li>后面当我们每创建一个新的节点，就把该节点加入到已有的环形链表中即可。</li> </ul> <p>2）遍历环形链表</p> <ul> <li>先让一个辅助指针（变量）curBoy，指向first节点</li> <li>然后通过一个while循环遍历该环形链表即可，curBoy.next == first结束</li> </ul> <p>5. 约瑟夫问题小孩出圈的思路分析</p> <p><img decoding="async" alt="" class="has" height="425" src="http://img.555519.xyz/uploads/20230108/6e8050ec6a82ab63210689c6f61b11e7.jpg"></p> <p>6.代码实现</p> <div> <pre><code class="language-html hljs">public class Josepfu {      public static void main(String[] args) {         // 测试一把看看构建环形链表，和遍历是否ok         CircleSingleLinkedList circleSingleLinkedList = new CircleSingleLinkedList();         circleSingleLinkedList.addBoy(125);// 加入5个小孩节点         circleSingleLinkedList.showBoy();                  //测试一把小孩出圈是否正确         circleSingleLinkedList.countBoy(10, 20, 125); // 2-&gt;4-&gt;1-&gt;5-&gt;3         //String str = "7*2*2-5+1-5+3-3";     }  }  // 创建一个环形的单向链表 class CircleSingleLinkedList {     // 创建一个first节点,当前没有编号     private Boy first = null;      // 添加小孩节点，构建成一个环形的链表     public void addBoy(int nums) {         // nums 做一个数据校验         if (nums &lt; 1) {             System.out.println("nums的值不正确");             return;         }         Boy curBoy = null; // 辅助指针，帮助构建环形链表         // 使用for来创建我们的环形链表         for (int i = 1; i &lt;= nums; i++) {             // 根据编号，创建小孩节点             Boy boy = new Boy(i);             // 如果是第一个小孩             if (i == 1) {                 first = boy;                 first.setNext(first); // 构成环                 curBoy = first; // 让curBoy指向第一个小孩             } else {                 curBoy.setNext(boy);//                 boy.setNext(first);//                 curBoy = boy;             }         }     }      // 遍历当前的环形链表     public void showBoy() {         // 判断链表是否为空         if (first == null) {             System.out.println("没有任何小孩~~");             return;         }         // 因为first不能动，因此我们仍然使用一个辅助指针完成遍历         Boy curBoy = first;         while (true) {             System.out.printf("小孩的编号 %d \n", curBoy.getNo());             if (curBoy.getNext() == first) {// 说明已经遍历完毕                 break;             }             curBoy = curBoy.getNext(); // curBoy后移         }     }      // 根据用户的输入，计算出小孩出圈的顺序     /**      *       * @param startNo      *            表示从第几个小孩开始数数      * @param countNum      *            表示数几下      * @param nums      *            表示最初有多少小孩在圈中      */     public void countBoy(int startNo, int countNum, int nums) {         // 先对数据进行校验         if (first == null || startNo &lt; 1 || startNo &gt; nums) {             System.out.println("参数输入有误， 请重新输入");             return;         }         // 创建要给辅助指针,帮助完成小孩出圈         Boy helper = first;         // 需求创建一个辅助指针(变量) helper , 事先应该指向环形链表的最后这个节点         while (true) {             if (helper.getNext() == first) { // 说明helper指向最后小孩节点                 break;             }             helper = helper.getNext();         }         //小孩报数前，先让 first 和  helper 移动 k - 1次         for(int j = 0; j &lt; startNo - 1; j++) {             first = first.getNext();             helper = helper.getNext();         }         //当小孩报数时，让first 和 helper 指针同时 的移动  m  - 1 次, 然后出圈         //这里是一个循环操作，知道圈中只有一个节点         while(true) {             if(helper == first) { //说明圈中只有一个节点                 break;             }             //让 first 和 helper 指针同时 的移动 countNum - 1             for(int j = 0; j &lt; countNum - 1; j++) {                 first = first.getNext();                 helper = helper.getNext();             }             //这时first指向的节点，就是要出圈的小孩节点             System.out.printf("小孩%d出圈\n", first.getNo());             //这时将first指向的小孩节点出圈             first = first.getNext();             helper.setNext(first); //                      }         System.out.printf("最后留在圈中的小孩编号%d \n", first.getNo());              } }  // 创建一个Boy类，表示一个节点 class Boy {     private int no;// 编号     private Boy next; // 指向下一个节点,默认null      public Boy(int no) {         this.no = no;     }      public int getNo() {         return no;     }      public void setNo(int no) {         this.no = no;     }      public Boy getNext() {         return next;     }      public void setNext(Boy next) {         this.next = next;     } }</code></pre> </p></div> <p>&nbsp;</p> </div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-87635.htm">spring中jdbcTemplate.batchUpdate的几种使用情况_java</a></p>
+                                        <p>下一个：<a href="/news/article-88338.htm">养猫对属蛇影响（属蛇养猫会带来什么运气）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-65883.htm" title="优瑞派狗粮价格（优瑞派的猫粮怎么样）">优瑞派狗粮价格（优瑞派的猫粮怎么样）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-subscribe-node.htm" title="「3月24日」最高速度21.5M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接">「3月24日」最高速度21.5M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-76426.htm" title="猫咪疫苗要打几针?（猫咪疫苗要打几针才能洗澡）">猫咪疫苗要打几针?（猫咪疫苗要打几针才能洗澡）</a></li>
+                        <li class="py-2"><a href="/news/article-79841.htm" title="动物疫苗注射工作注意事项及要求有哪些（动物疫苗注射方法）">动物疫苗注射工作注意事项及要求有哪些（动物疫苗注射方法）</a></li>
+                        <li class="py-2"><a href="/news/article-80510.htm" title="宠物零食制作教程风干（宠物自制风干零食）">宠物零食制作教程风干（宠物自制风干零食）</a></li>
+                        <li class="py-2"><a href="/news/article-88337.htm" title="Java数据结构之单向环形链表（解决Josephu约瑟夫环问题）">Java数据结构之单向环形链表（解决Josephu约瑟夫环问题）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-clash-node-daily-updates.htm" title="「3月8日」最高速度22.3M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费手机节点订阅链接">「3月8日」最高速度22.3M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-89816.htm" title="适合穷人养的猫狗（适合穷人养的10种狗）">适合穷人养的猫狗（适合穷人养的10种狗）</a></li>
+                        <li class="py-2"><a href="/news/article-82635.htm" title="宠物领养什么意思啊英文怎么说呢（宠物领养等于送吗）">宠物领养什么意思啊英文怎么说呢（宠物领养等于送吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-node-subscribe-links.htm" title="「3月22日」最高速度20.6M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接">「3月22日」最高速度20.6M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

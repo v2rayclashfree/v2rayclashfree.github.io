@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-87634.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>动态修改springboot中的scheduling(动态修改定时任务执行时间)</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="package org.springblade.timing;   import java.util.Date; import javax.servlet.http.HttpServletReques" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-87634.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="动态修改springboot中的scheduling(动态修改定时任务执行时间)" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/b5e447c6812ba8abff23c3d70bac4afe.webp" />
+        <meta property="og:release_date" content="2025-04-03T08:33:31" />
+    <meta property="og:updated_time" content="2025-04-03T08:33:31" />
+        <meta property="og:description" content="package org.springblade.timing;   import java.util.Date; import javax.servlet.http.HttpServletReques" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="动态修改springboot中的scheduling(动态修改定时任务执行时间)">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="logo">
+                        <span>V2ray Clash Free</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>动态修改springboot中的scheduling(动态修改定时任务执行时间)</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <pre><code>package org.springblade.timing;   import java.util.Date; import javax.servlet.http.HttpServletRequest; import org.springframework.context.annotation.Lazy; import org.springframework.scheduling.Trigger; import org.springframework.scheduling.TriggerContext; import org.springframework.scheduling.annotation.EnableScheduling; import org.springframework.scheduling.annotation.SchedulingConfigurer; import org.springframework.scheduling.config.ScheduledTaskRegistrar; import org.springframework.scheduling.support.CronTrigger; import org.springframework.stereotype.Component; import org.springframework.stereotype.Controller; import org.springframework.web.bind.annotation.RequestMapping;  @Lazy(value=false) @Component @EnableScheduling @Controller public class DynamicCronTask implements SchedulingConfigurer {  	public static String cron = "0/10 * * * * ?";  	@RequestMapping("/setDynamicCronTask") 	public String setSpringDynamicCronTask(HttpServletRequest request, String setCron) { 		System.out.println("cron setDynamicCronTaskto:" + setCron); 		cron = setCron; 		System.err.println("cron change to:" + cron); 		return ""; 	} 	@Override 	public void configureTasks(ScheduledTaskRegistrar taskRegister) { 		taskRegister.addTriggerTask(new Runnable() { 			@Override 			public void run() { 				// 逻辑任务  				System.out.println("dynamicCronTask is running..."+taskRegister.getCronTaskList().size()); 			} 		}, new Trigger() { 			@Override 			public Date nextExecutionTime(TriggerContext triggerContext) { 				// 任务触发，可修改任务的执行周期 				CronTrigger trigger = new CronTrigger(cron); 				System.out.println("cron:" + cron); 				Date nextExecutor = trigger.nextExecutionTime(triggerContext); 				return nextExecutor; 			} 		}); 	} } </code></pre> <p>模拟请求：</p> <p>http://localhost:9998/setDynamicCronTask?setCron=0/1 * * * * ?&nbsp;</p> <p>运行结果：</p> <p><img fetchpriority="high" decoding="async" alt="" height="417" src="http://img.555519.xyz/uploads/20230108/d6d063e5efcfe4a5bb09fa591024c176.jpg"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-86909.htm">动物疫苗市场开放 动物疫苗市场开放时间</a></p>
+                                        <p>下一个：<a href="/news/article-87635.htm">spring中jdbcTemplate.batchUpdate的几种使用情况_java</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-83338.htm" title="MyBatis 及 MyBatis Plus 纯注解方式配置(Spring Boot + Postgresql) &#8211; Milton">MyBatis 及 MyBatis Plus 纯注解方式配置(Spring Boot + Postgresql) &#8211; Milton</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-node-subscribe-links.htm" title="「3月22日」最高速度20.6M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接">「3月22日」最高速度20.6M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-86908.htm" title="动物医院诊疗许可证办理流程图解电子版（动物医院办理条件）">动物医院诊疗许可证办理流程图解电子版（动物医院办理条件）</a></li>
+                        <li class="py-2"><a href="/news/article-76426.htm" title="猫咪疫苗要打几针?（猫咪疫苗要打几针才能洗澡）">猫咪疫苗要打几针?（猫咪疫苗要打几针才能洗澡）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-free-ssr-subscribe.htm" title="「3月21日」最高速度18.3M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接">「3月21日」最高速度18.3M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-80510.htm" title="宠物零食制作教程风干（宠物自制风干零食）">宠物零食制作教程风干（宠物自制风干零食）</a></li>
+                        <li class="py-2"><a href="/news/article-67184.htm" title="宠物粮食品牌前十排名有哪些呢图片大全及价格（宠物粮食品牌都有什么）">宠物粮食品牌前十排名有哪些呢图片大全及价格（宠物粮食品牌都有什么）</a></li>
+                        <li class="py-2"><a href="/news/article-66535.htm" title="河南兽药厂100强排名榜（河南兽药厂100强排名榜最新）">河南兽药厂100强排名榜（河南兽药厂100强排名榜最新）</a></li>
+                        <li class="py-2"><a href="/news/article-87635.htm" title="spring中jdbcTemplate.batchUpdate的几种使用情况_java">spring中jdbcTemplate.batchUpdate的几种使用情况_java</a></li>
+                        <li class="py-2"><a href="/news/article-67823.htm" title="vue中动态控制btn的disabled属性方式_vue.js">vue中动态控制btn的disabled属性方式_vue.js</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
