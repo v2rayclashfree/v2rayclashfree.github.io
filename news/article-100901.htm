@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayclashfree.github.io/news/article-100901.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TensorFlow运行出错：UnicodeEncodeError: &#8216;utf-8&#8217; codec can&#8217;t encode character &#8216;\udcce&#8217; in position 2559: s</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="TensorFlow运行利用slim读取TFRecord中的数据： 一开始报错：UnicodeEncodeError: 'utf-8' codec can't encode character '\u" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/v2rayclashfree/favicon.ico" rel="icon">
+
+    <meta name="author" content="V2rayClashFree节点试用站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayclashfree.github.io/news/article-100901.htm" />
+    <meta property="og:site_name" content="V2rayClashFree节点试用站" />
+    <meta property="og:title" content="TensorFlow运行出错：UnicodeEncodeError: &#8216;utf-8&#8217; codec can&#8217;t encode character &#8216;\udcce&#8217; in position 2559: s" />
+    <meta property="og:image" content="https://v2rayclashfree.github.io/uploads/20240605/cf61454141c8bb886a03b156d21d6f49.webp" />
+        <meta property="og:release_date" content="2025-04-21T06:53:13" />
+    <meta property="og:updated_time" content="2025-04-21T06:53:13" />
+        <meta property="og:description" content="TensorFlow运行利用slim读取TFRecord中的数据： 一开始报错：UnicodeEncodeError: 'utf-8' codec can't encode character '\u" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="TensorFlow运行出错：UnicodeEncodeError: &#8216;utf-8&#8217; codec can&#8217;t encode character &#8216;\udcce&#8217; in position 2559: s">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayclashfree/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F475LH78LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F475LH78LC');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="logo">
+                        <span>V2ray Clash Free</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>TensorFlow运行出错：UnicodeEncodeError: &#8216;utf-8&#8217; codec can&#8217;t encode character &#8216;\udcce&#8217; in position 2559: s</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>TensorFlow运行利用slim读取TFRecord中的数据：</p> <p>一开始报错：UnicodeEncodeError: 'utf-8' codec can't encode character '\udcce' in position 2559: surrogates not allowed</p> <p>想了好久才发现原来是路径的问题，之前是在Windows下复制的路径（flower数据集的地址）：D:\tmp\data\flowers</p> <p>但是tensorflow下的路径不是这样的，斜杠相反：D:/tmp/data/flowers</p> <p>这样一来，程序就跑通了</p> <pre class="has"><code class="language-python"> import tensorflow as tf from datasets import flowers import pylab   slim = tf.contrib.slim  DATA_DIR="D:/tmp/data/flowers"  #选择数据集validation dataset = flowers.get_split('validation', DATA_DIR)  #创建一个provider provider = slim.dataset_data_provider.DatasetDataProvider(dataset) #通过provider的get拿到内容 [image, label] = provider.get(['image', 'label']) print(image.shape)  sess = tf.InteractiveSession() tf.global_variables_initializer().run() #启动队列 tf.train.start_queue_runners() #获取数据 image_batch, label_batch = sess.run([image, label]) #显示 print(label_batch) pylab.imshow(image_batch) pylab.show()</code></pre> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="768" src="http://img.555519.xyz/uploads3/20220609/f9886f63914942143394d39eedf94fc7.jpg"></p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100290.htm">宠物领养协议书范本模板图片下载（宠物领养协议书范本模板图片下载大全）</a></p>
+                                        <p>下一个：<a href="/news/article-100902.htm">附近免费领养狗边牧在哪里（附近哪有边牧小狗狗卖）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-79166.htm" title="vue中动态控制btn的disabled属性方式_vue.js">vue中动态控制btn的disabled属性方式_vue.js</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-subscribe-node.htm" title="「3月24日」最高速度21.5M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接">「3月24日」最高速度21.5M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-free-high-speed-nodes.htm" title="「3月18日」最高速度19M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接">「3月18日」最高速度19M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-91991.htm" title="动物疫苗的作用（动物疫苗的作用有哪些）">动物疫苗的作用（动物疫苗的作用有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-69098.htm" title="穷养猫咪从开始要多少钱（猫咪穷养一个月多少钱）">穷养猫咪从开始要多少钱（猫咪穷养一个月多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-86908.htm" title="动物医院诊疗许可证办理流程图解电子版（动物医院办理条件）">动物医院诊疗许可证办理流程图解电子版（动物医院办理条件）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-free-ssr-subscribe.htm" title="「4月10日」最高速度19.8M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费手机节点订阅链接">「4月10日」最高速度19.8M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费手机节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-84034.htm" title="南京宠物托运飞机（南京机场托运宠物）">南京宠物托运飞机（南京机场托运宠物）</a></li>
+                        <li class="py-2"><a href="/news/article-87635.htm" title="spring中jdbcTemplate.batchUpdate的几种使用情况_java">spring中jdbcTemplate.batchUpdate的几种使用情况_java</a></li>
+                        <li class="py-2"><a href="/news/article-84765.htm" title="springboot实现定时任务-Scheduling">springboot实现定时任务-Scheduling</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">64</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p class="p-small">
+                        V2rayClashFree节点试用站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayclashfree/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/jquery-3.2.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayclashfree/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+    <script src="/assets/website/js/frontend/v2rayclashfree/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
