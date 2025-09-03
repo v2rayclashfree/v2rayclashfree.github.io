@@ -1,4 +1,4 @@
-# 推荐Clash机场 - 8月28日18M/S|免费SSR/Shadowrocket/Clash/V2ray节点推荐，V2rayC梯子购买推荐  更新时间 2025-08-28 09:08:13
+# 推荐Clash机场 - 9月3日21.1M/S|免费Clash/SSR/Shadowrocket/V2ray节点推荐，V2rayC梯子购买推荐  更新时间 2025-09-03 05:56:19
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://v2rayclashfree.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://v2rayclashfree.github.io/uploads/2025/08/0-20250828.yaml
-- https://v2rayclashfree.github.io/uploads/2025/08/1-20250828.yaml
-- https://v2rayclashfree.github.io/uploads/2025/08/2-20250828.yaml
-- https://v2rayclashfree.github.io/uploads/2025/08/3-20250828.yaml
-- https://v2rayclashfree.github.io/uploads/2025/08/4-20250828.yaml
+- https://v2rayclashfree.github.io/uploads/2025/09/0-20250903.yaml
+- https://v2rayclashfree.github.io/uploads/2025/09/1-20250903.yaml
+- https://v2rayclashfree.github.io/uploads/2025/09/2-20250903.yaml
+- https://v2rayclashfree.github.io/uploads/2025/09/3-20250903.yaml
+- https://v2rayclashfree.github.io/uploads/2025/09/4-20250903.yaml
 
 ### V2ray订阅链接
 
-- https://v2rayclashfree.github.io/uploads/2025/08/0-20250828.txt
-- https://v2rayclashfree.github.io/uploads/2025/08/1-20250828.txt
-- https://v2rayclashfree.github.io/uploads/2025/08/2-20250828.txt
-- https://v2rayclashfree.github.io/uploads/2025/08/3-20250828.txt
-- https://v2rayclashfree.github.io/uploads/2025/08/4-20250828.txt
+- https://v2rayclashfree.github.io/uploads/2025/09/0-20250903.txt
+- https://v2rayclashfree.github.io/uploads/2025/09/1-20250903.txt
+- https://v2rayclashfree.github.io/uploads/2025/09/2-20250903.txt
+- https://v2rayclashfree.github.io/uploads/2025/09/3-20250903.txt
+- https://v2rayclashfree.github.io/uploads/2025/09/4-20250903.txt
 
 ### Sing-box订阅链接
 
-- https://v2rayclashfree.github.io/uploads/2025/08/20250828.json
+- https://v2rayclashfree.github.io/uploads/2025/09/20250903.json
 
 ## 更多clash节点订阅 ：
 
